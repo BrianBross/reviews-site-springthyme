@@ -17,10 +17,10 @@ public class StaticPrototypeTest {
 		Date underTestReviewDate = new Date();
 		String underTestProductCategory = "Test Category";
 		String underTestReviewBody = "This book was so good it made me wanna slap my momma.";
-		Review underTest = new Review(underTestReviewTitle, underTestProductInfo, underTestUserName, underTestReviewDate, underTestProductCategory, underTestReviewBody);
-		
+		Review underTest = new Review(underTestReviewTitle, underTestProductInfo, underTestUserName,
+				underTestReviewDate, underTestProductCategory, underTestReviewBody);
+
 		assertThat(underTest.getReviewTitle(), is(underTestReviewTitle));
 	}
-	
-	
+
 }
