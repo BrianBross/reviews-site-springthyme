@@ -19,4 +19,8 @@ public class ReviewRepository {
 		return reviewList.values();
 	}
 
+	public Review findReview(String reviewTitle) {
+		return reviewList.get(reviewTitle);
+	}
+
 }
