@@ -28,4 +28,8 @@ public class Review {
 	public String toString() {
 		return reviewTitle;
 	}
+
+	public String getCategory() {
+		return productCategory;
+	}
 }
