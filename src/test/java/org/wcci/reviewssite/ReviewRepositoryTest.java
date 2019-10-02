@@ -4,6 +4,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 
@@ -67,6 +68,16 @@ public class ReviewRepositoryTest {
 		assertThat(expectedReview, is(underTestReview));
 	}
 
+	@Test
+	public void storageShouldHaveDefaultListsofCategories() {
+		ReviewStorage underTest = new ReviewStorage();
+		ArrayList categoryListFiction = underTest.getCategoryListFiction();
+		ArrayList categoryListNonFiction = underTest.getCategoryListNonFiction();
+		int fictionCategoryListSize = categoryListFiction.size();
+		int NonFictionCategoryListSize = categoryListNonFiction.size();
+		assertEquals(fictionCategoryListSize, 7);
+		assertEquals(NonFictionCategoryListSize, 7);
+	}
 
 
 }
