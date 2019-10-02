@@ -6,7 +6,7 @@
 
 .wrapper {
   display: grid;
-  grid-template-columns: 20% 80%;
+  grid-template-columns: 10% 90%;
   grid-template-rows: 10% 80% 10%;
   height: 100vh;
   width: 100vw;
@@ -14,7 +14,13 @@
 
 .header {
   grid-area: 1 / 1 / 1 / 3;
-  background-color: #ff4500;
+  background-color:black;
+  text-align: center;
+}
+
+.header-title {
+  font-size: 60px;
+  color: white;
 }
 
 .footer__image > img {
