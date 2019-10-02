@@ -46,7 +46,7 @@ public class ReviewRepositoryTest {
 		Collection<Review> addedReviews = underTest.retrieveReviewList();
 		assertThat(addedReviews, containsInAnyOrder(underTestReview, underTestReview2));
 	}
-	
+
 	@Test
 	public void shouldBeAbleToFindOneReview() throws Exception {
 		ReviewStorage underTest = new ReviewStorage();
@@ -63,7 +63,7 @@ public class ReviewRepositoryTest {
 		Review underTestReview2 = new Review(underTestReviewTitle2, underTestProductInfo, underTestUserName,
 				underTestReviewDate, underTestProductCategory, underTestReviewBody);
 		underTest.addReview(underTestReview2);
-		
+
 		Review expectedReview = underTest.findReview(underTestReviewTitle);
 		assertThat(expectedReview, is(underTestReview));
 	}
@@ -79,5 +79,19 @@ public class ReviewRepositoryTest {
 		assertEquals(NonFictionCategoryListSize, 7);
 	}
 
+	@Test
+	public void shouldBeAbleToCreateReviewOfDefaultCategory() throws Exception {
+		ReviewStorage underTest = new ReviewStorage();
+		String underTestReviewTitle = "Test Review Title";
+		String underTestProductInfo = "Test Product Title";
+		String underTestUserName = "Test Author";
+		Date underTestReviewDate = new Date();
+		String underTestProductCategory = underTest.categoryListNonFiction.get(3);
+		String underTestReviewBody = "This book was so good it made me wanna slap my momma.";
+		Review underTestReview = new Review(underTestReviewTitle, underTestProductInfo, underTestUserName,
+				underTestReviewDate, underTestProductCategory, underTestReviewBody);
+		underTest.addReview(underTestReview);
+		assertThat(underTestReview.getCategory(),is(underTestProductCategory) );
+	}
 
 }
