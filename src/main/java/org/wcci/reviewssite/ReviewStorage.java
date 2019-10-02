@@ -3,10 +3,10 @@ package org.wcci.reviewssite;
 import java.util.HashMap;
 import java.util.Collection;
 
-public class ReviewRepository {
+public class ReviewStorage {
 	HashMap<String, Review> reviewList;
 
-	public ReviewRepository() {
+	public ReviewStorage() {
 		reviewList = new HashMap<>();
 	}
 

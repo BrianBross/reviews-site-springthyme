@@ -13,7 +13,7 @@ import org.junit.Test;
 public class ReviewRepositoryTest {
 	@Test
 	public void shouldBeAbleToAddReview() throws Exception {
-		ReviewRepository underTest = new ReviewRepository();
+		ReviewStorage underTest = new ReviewStorage();
 		String underTestReviewTitle = "Test Review Title";
 		String underTestProductInfo = "Test Product Title";
 		String underTestUserName = "Test Author";
@@ -28,7 +28,7 @@ public class ReviewRepositoryTest {
 
 	@Test
 	public void shouldBeAbleToAddMulitpleReviews() throws Exception {
-		ReviewRepository underTest = new ReviewRepository();
+		ReviewStorage underTest = new ReviewStorage();
 		String underTestReviewTitle = "Test Review Title";
 		String underTestProductInfo = "Test Product Title";
 		String underTestUserName = "Test Author";
@@ -48,7 +48,7 @@ public class ReviewRepositoryTest {
 	
 	@Test
 	public void shouldBeAbleToFindOneReview() throws Exception {
-		ReviewRepository underTest = new ReviewRepository();
+		ReviewStorage underTest = new ReviewStorage();
 		String underTestReviewTitle = "Test Review Title";
 		String underTestProductInfo = "Test Product Title";
 		String underTestUserName = "Test Author";
