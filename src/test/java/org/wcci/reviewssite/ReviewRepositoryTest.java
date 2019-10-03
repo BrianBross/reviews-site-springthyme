@@ -4,9 +4,9 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.*;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Date;
 
 import org.hamcrest.Matcher;
 import org.junit.Test;
@@ -18,7 +18,7 @@ public class ReviewRepositoryTest {
 		String underTestReviewTitle = "Test Review Title";
 		String underTestProductInfo = "Test Product Title";
 		String underTestUserName = "Test Author";
-		Date underTestReviewDate = new Date();
+		LocalDate underTestReviewDate = LocalDate.now();
 		String underTestProductCategory = "Test Category";
 		String underTestReviewBody = "This book was so good it made me wanna slap my momma.";
 		Review underTestReview = new Review(underTestReviewTitle, underTestProductInfo, underTestUserName,
@@ -33,7 +33,7 @@ public class ReviewRepositoryTest {
 		String underTestReviewTitle = "Test Review Title";
 		String underTestProductInfo = "Test Product Title";
 		String underTestUserName = "Test Author";
-		Date underTestReviewDate = new Date();
+		LocalDate underTestReviewDate = LocalDate.now();
 		String underTestProductCategory = "Test Category";
 		String underTestReviewBody = "This book was so good it made me wanna slap my momma.";
 		Review underTestReview = new Review(underTestReviewTitle, underTestProductInfo, underTestUserName,
@@ -53,7 +53,7 @@ public class ReviewRepositoryTest {
 		String underTestReviewTitle = "Test Review Title";
 		String underTestProductInfo = "Test Product Title";
 		String underTestUserName = "Test Author";
-		Date underTestReviewDate = new Date();
+		LocalDate underTestReviewDate = LocalDate.now();
 		String underTestProductCategory = "Test Category";
 		String underTestReviewBody = "This book was so good it made me wanna slap my momma.";
 		Review underTestReview = new Review(underTestReviewTitle, underTestProductInfo, underTestUserName,
@@ -85,7 +85,7 @@ public class ReviewRepositoryTest {
 		String underTestReviewTitle = "Test Review Title";
 		String underTestProductInfo = "Test Product Title";
 		String underTestUserName = "Test Author";
-		Date underTestReviewDate = new Date();
+		LocalDate underTestReviewDate = LocalDate.now();
 		String underTestProductCategory = underTest.categoryListNonFiction.get(3);
 		String underTestReviewBody = "This book was so good it made me wanna slap my momma.";
 		Review underTestReview = new Review(underTestReviewTitle, underTestProductInfo, underTestUserName,

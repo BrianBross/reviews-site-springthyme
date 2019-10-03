@@ -1,16 +1,17 @@
 package org.wcci.reviewssite;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 public class Review {
 	private String reviewTitle;
 	private String productInfo;
 	private String userName;
-	private Date reviewDate;
+	private LocalDate reviewDate;
 	private String productCategory;
 	private String reviewBody;
 
-	public Review(String reviewTitle, String productInfo, String userName, Date reviewDate, String productCategory,
+	public Review(String reviewTitle, String productInfo, String userName, LocalDate reviewDate, String productCategory,
 			String reviewBody) {
 		this.reviewTitle = reviewTitle;
 		this.productInfo = productInfo;
