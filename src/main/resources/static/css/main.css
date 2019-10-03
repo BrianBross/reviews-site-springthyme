@@ -4,10 +4,15 @@
     padding: 0;
   }
 
+html {
+  font: 20px/1;
+
+}
+
 .wrapper {
   display: grid;
   grid-template-columns: 10% 90%;
-  grid-template-rows: 10% 80% 10%;
+  grid-template-rows: 15% auto 5%;
   height: 100vh;
   width: 100vw;
 }
@@ -21,6 +26,7 @@
 .header-title {
   font-size: 60px;
   color: white;
+  margin: 0.8rem;
 }
 
 .footer__image > img {
@@ -52,11 +58,12 @@
   display: grid;
   grid-gap: 2rem 1rem;
   grid-template-columns: repeat(3, 1fr);
+  padding: 1rem;
 }
 
 .review-item {
   align-items: flex-start;
-  border: 1px var(--mid) solid;
+  border: 1px red solid;
   border-radius: 0.25rem;
   box-shadow: 0px 1px 2px 0px var(--pink);
   display: flex;
