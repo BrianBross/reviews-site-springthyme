@@ -2,6 +2,8 @@ package org.wcci.reviewssite;
 
 import java.time.LocalDate;
 
+import javax.annotation.Resource;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,7 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class HomeController {
-	
+	@Resource
+	private ReviewStorage   storage;
 	@RequestMapping("/")
 		public String singleReview(Model model) {
 			Review review = new Review("First Review", "Gone With The Wind", "James Doe", LocalDate.now(), "Fiction",
