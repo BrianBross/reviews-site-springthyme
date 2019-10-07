@@ -1,5 +1,8 @@
 package org.wcci.reviewssite;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Tag {
 	
 
