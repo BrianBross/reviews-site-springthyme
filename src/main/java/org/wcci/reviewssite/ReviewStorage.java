@@ -1,9 +1,12 @@
 package org.wcci.reviewssite;
 
 import java.util.HashMap;
+
+import org.springframework.stereotype.Repository;
+
 import java.util.ArrayList;
 import java.util.Collection;
-
+@Repository
 public class ReviewStorage {
 	
 	HashMap<String, Review> reviewList;

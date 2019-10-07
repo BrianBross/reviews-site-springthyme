@@ -22,5 +22,11 @@ public class HomeController {
 			model.addAttribute("userReview", review);
 			return "review";
 		}
-					
+	@RequestMapping("/add_review")
+	public String addReview(Model model) {
+		Review review = new Review("First Review", "Gone With The Wind", "James Doe", LocalDate.now(), "Fiction",
+		"So good I wanna slap my mama");
+		model.addAttribute("userReview", review);
+		return "add_review";		
+}
 }

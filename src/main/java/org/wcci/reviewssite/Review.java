@@ -3,7 +3,13 @@ package org.wcci.reviewssite;
 import java.time.LocalDate;
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+@Entity
 public class Review {
+	@Id
+	@GeneratedValue
 	private String reviewTitle;
 	private String productInfo;
 	private String userName;
@@ -33,4 +39,6 @@ public class Review {
 	public String getCategory() {
 		return productCategory;
 	}
+	
+	public Review() {}
 }
