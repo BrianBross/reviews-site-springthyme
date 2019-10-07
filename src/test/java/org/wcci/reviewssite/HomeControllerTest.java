@@ -7,6 +7,7 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import java.util.Collections;
+import java.util.List;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -32,9 +33,20 @@ public class HomeControllerTest {
 	@Test
 	public void displayAllReviews() throws Exception {
 		String viewName = underTest.displayAllReviews(model);
-		assertThat(viewName, is("reviews-view"));
+		assertThat(viewName, is("reviews"));
 	}
 	
-
+	@Test
+	public void displayAllReviewsAddReviewsToTheModel() throws Exception {
+		Review mockReview = mock(Review.class);
+		
+		
+		when(mockStorage.findAllTheReviews()).thenReturn(Collections.singletonList(mockReview));
+		
+		underTest.displayAllReviews(model);
+		
+		verify(model).addAttribute("reviews", Collections.singletonList(mockReview));
+	}
+	
 
 }

@@ -1,33 +1,30 @@
 package org.wcci.reviewssite;
 
-import java.util.HashMap;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import java.util.ArrayList;
-import java.util.Collection;
 @Repository
 public class ReviewStorage {
+	@Autowired
+	ReviewRepository reviewRepo;
 	
-	HashMap<String, Review> reviewList;
+	//may need an author here in the future
 	
-
-	public ReviewStorage() {
-		reviewList = new HashMap<>();
-	}
 
 	public void addReview(Review reviewToAdd) {
-		reviewList.put(reviewToAdd.getReviewTitle(), reviewToAdd);
+		reviewRepo.save(reviewToAdd);
 
 	}
 
-	public Collection<Review> retrieveReviewList() {
-		return reviewList.values();
+	public Review findReview(Long id) {
+		return reviewRepo.findById(id).get();
 	}
 
-	public Review findReview(String reviewTitle) {
-		return reviewList.get(reviewTitle);
+	public Iterable<Review> findAllTheReviews() {
+		return reviewRepo.findAll();
 	}
+	
+	
 
 	
 	
