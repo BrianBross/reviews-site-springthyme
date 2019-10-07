@@ -9,12 +9,13 @@ html {
 
 }
 
-.wrapper {
-  display: grid;
-  grid-template-columns: 10% 90%;
-  grid-template-rows: 15% auto 5%;
-  height: 100vh;
-  width: 100vw;
+.add-review-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.add-review-form__field {
+  padding-bottom: 1rem;
 }
 
 .header {
@@ -40,13 +41,9 @@ html {
   width: 100%;
 }
 
-.add-review-form {
-  display: flex;
-  flex-direction: column;
-}
-
-.add-review-form__field {
-  padding-bottom: 1rem;
+.navigation-bar {
+  grid-area: 2 / 1 / 3 / 1;
+  background-color: aqua;
 }
 
 .review-container {
@@ -66,9 +63,12 @@ html {
   padding: 0.5rem;
 }
 
-.navigation-bar {
-  grid-area: 2 / 1 / 3 / 1;
-  background-color: aqua;
-}
 
+.wrapper {
+  display: grid;
+  grid-template-columns: 10% 90%;
+  grid-template-rows: 15% auto 5%;
+  height: 100vh;
+  width: 100vw;
+}
 
