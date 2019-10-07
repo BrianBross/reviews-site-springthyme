@@ -29,4 +29,7 @@ public class HomeController {
 		model.addAttribute("userReview", review);
 		return "add_review";		
 }
+	public String displayAllReviews(Model model) {
+		return "reviews-view";
+	}
 }
