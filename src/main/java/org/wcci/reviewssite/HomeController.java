@@ -30,6 +30,8 @@ public class HomeController {
 		return "add_review";		
 }
 	public String displayAllReviews(Model model) {
-		return "reviews-view";
+		model.addAttribute("reviews", storage.findAllTheReviews());
+		
+		return "reviews";
 	}
 }

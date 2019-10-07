@@ -31,9 +31,67 @@ public class Review {
 		return this.reviewTitle;
 	}
 
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((productCategory == null) ? 0 : productCategory.hashCode());
+		result = prime * result + ((productInfo == null) ? 0 : productInfo.hashCode());
+		result = prime * result + ((reviewBody == null) ? 0 : reviewBody.hashCode());
+		result = prime * result + ((reviewDate == null) ? 0 : reviewDate.hashCode());
+		result = prime * result + ((reviewTitle == null) ? 0 : reviewTitle.hashCode());
+		result = prime * result + ((userName == null) ? 0 : userName.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Review other = (Review) obj;
+		if (productCategory == null) {
+			if (other.productCategory != null)
+				return false;
+		} else if (!productCategory.equals(other.productCategory))
+			return false;
+		if (productInfo == null) {
+			if (other.productInfo != null)
+				return false;
+		} else if (!productInfo.equals(other.productInfo))
+			return false;
+		if (reviewBody == null) {
+			if (other.reviewBody != null)
+				return false;
+		} else if (!reviewBody.equals(other.reviewBody))
+			return false;
+		if (reviewDate == null) {
+			if (other.reviewDate != null)
+				return false;
+		} else if (!reviewDate.equals(other.reviewDate))
+			return false;
+		if (reviewTitle == null) {
+			if (other.reviewTitle != null)
+				return false;
+		} else if (!reviewTitle.equals(other.reviewTitle))
+			return false;
+		if (userName == null) {
+			if (other.userName != null)
+				return false;
+		} else if (!userName.equals(other.userName))
+			return false;
+		return true;
+	}
+
 	@Override
 	public String toString() {
-		return reviewTitle;
+		return "Review [reviewTitle=" + reviewTitle + ", productInfo=" + productInfo + ", userName=" + userName
+				+ ", reviewDate=" + reviewDate + ", productCategory=" + productCategory + ", reviewBody=" + reviewBody
+				+ "]";
 	}
 
 	public String getCategory() {
