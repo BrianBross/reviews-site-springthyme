@@ -7,6 +7,8 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 @Entity
 public class Review {
 	@Id
@@ -17,7 +19,9 @@ public class Review {
 	private String productInfo;
 	private String userName;
 	private LocalDate reviewDate;
+	@ManyToOne
 	private Category category;
+	@ManyToMany
 	private List<Tag> tags;
 	private String reviewBody;
 
@@ -51,7 +55,7 @@ public class Review {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((productCategory == null) ? 0 : productCategory.hashCode());
+		result = prime * result + ((category == null) ? 0 : category.hashCode());
 		result = prime * result + ((productInfo == null) ? 0 : productInfo.hashCode());
 		result = prime * result + ((reviewBody == null) ? 0 : reviewBody.hashCode());
 		result = prime * result + ((reviewDate == null) ? 0 : reviewDate.hashCode());
@@ -69,10 +73,10 @@ public class Review {
 		if (getClass() != obj.getClass())
 			return false;
 		Review other = (Review) obj;
-		if (productCategory == null) {
-			if (other.productCategory != null)
+		if (category == null) {
+			if (other.category != null)
 				return false;
-		} else if (!productCategory.equals(other.productCategory))
+		} else if (!category.equals(other.category))
 			return false;
 		if (productInfo == null) {
 			if (other.productInfo != null)
@@ -105,7 +109,7 @@ public class Review {
 	@Override
 	public String toString() {
 		return "Review [reviewTitle=" + reviewTitle + ", productInfo=" + productInfo + ", userName=" + userName
-				+ ", reviewDate=" + reviewDate + ", productCategory=" + productCategory + ", reviewBody=" + reviewBody
+				+ ", reviewDate=" + reviewDate + ", productCategory=" + category + ", reviewBody=" + reviewBody
 				+ "]";
 	}
 

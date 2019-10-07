@@ -1,20 +1,25 @@
 package org.wcci.reviewssite;
 
+import java.util.List;
+
 import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
+
 
 @Entity
 public class Tag {
 	
 
 		private String tagName;
-		private Review review;
+		@ManyToMany
+		private List<Review> reviews;
 
 		public Tag() {
 		}
 		
-		public Tag(String nameOfTag, Review nameOfReview) {
+		public Tag(String nameOfTag, List nameOfReview) {
 			this.tagName = nameOfTag;
-			this.review = nameOfReview;
+			this.reviews = nameOfReview;
 		}
 
 }
