@@ -10,6 +10,7 @@ import javax.persistence.Id;
 public class Review {
 	@Id
 	@GeneratedValue
+	private Long id;
 	private String reviewTitle;
 	private String productInfo;
 	private String userName;
@@ -28,8 +29,17 @@ public class Review {
 	}
 
 	public String getReviewTitle() {
-		return this.reviewTitle;
+		return reviewTitle;
+		
 	}
+	public String getProductInfo() {
+		return productInfo;
+	}
+	
+	public String getUserName() {
+		return  userName;
+	}
+	
 
 	@Override
 	public String toString() {
@@ -38,6 +48,15 @@ public class Review {
 
 	public String getCategory() {
 		return productCategory;
+	}
+	
+	public LocalDate getReviewDate( ) {
+		return reviewDate;
+		
+	}
+	
+	public String getReviewBody() {
+		return reviewBody;
 	}
 	
 	public Review() {}
