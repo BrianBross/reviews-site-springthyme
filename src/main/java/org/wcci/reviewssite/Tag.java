@@ -13,13 +13,16 @@ public class Tag {
 		private String tagName;
 		@ManyToMany
 		private List<Review> reviews;
-
+		
 		public Tag() {
 		}
 		
-		public Tag(String nameOfTag, List nameOfReview) {
+		public Tag(String nameOfTag) {
 			this.tagName = nameOfTag;
-			this.reviews = nameOfReview;
+		}
+		
+		public void addReviewToTag(Review reviewToAdd) {
+			reviews.add(reviewToAdd);
 		}
 
 }

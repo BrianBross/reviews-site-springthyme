@@ -15,10 +15,10 @@ public class ReviewTest {
 		String underTestProductInfo = "Test Product Title";
 		String underTestUserName = "Test Author";
 		LocalDate underTestReviewDate = LocalDate.now();
-		String underTestProductCategory = "Test Category";
+		Category underTestProductCategory = new Category("Test Category");
 		String underTestReviewBody = "This book was so good it made me wanna slap my momma.";
 		Review underTestReview = new Review(underTestReviewTitle, underTestProductInfo, underTestUserName,
-				underTestReviewDate, underTestProductCategory, underTestReviewBody);
+				underTestProductCategory, underTestReviewBody);
 		assertEquals(underTestReview.getReviewTitle(),underTestReviewTitle);
 	}
 	

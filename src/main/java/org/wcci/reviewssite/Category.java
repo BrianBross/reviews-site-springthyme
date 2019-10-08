@@ -14,8 +14,7 @@ public class Category {
 	public Category() {
 	}
 	
-	public Category(String nameOfCategory, List reviews) {
+	public Category(String nameOfCategory) {
 		this.categoryName = nameOfCategory;
-		this.reviews = reviews;
 	}
 }

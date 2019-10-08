@@ -18,7 +18,7 @@ public class Review {
 	private String reviewTitle;
 	private String productInfo;
 	private String userName;
-	private LocalDate reviewDate;
+	private LocalDate reviewDate = LocalDate.now();
 	@ManyToOne
 	private Category category;
 	@ManyToMany
@@ -26,15 +26,16 @@ public class Review {
 	private String reviewBody;
 
 	public Review(String reviewTitle, String productInfo, String userName, 
-			LocalDate reviewDate, Category category, List tags,
-			String reviewBody) {
+			Category category, String reviewBody) {
 		this.reviewTitle = reviewTitle;
 		this.productInfo = productInfo;
 		this.userName = userName;
-		this.reviewDate = reviewDate;
 		this.category = category;
-		this.tags = tags;
 		this.reviewBody = reviewBody;
+	}
+	
+	public void addTagToReview(Tag tagToAdd) {
+		tags.add(tagToAdd);
 	}
 
 	public String getReviewTitle() {
