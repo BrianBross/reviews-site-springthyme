@@ -13,8 +13,29 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class HomeController {
+	
 	@Resource
 	private ReviewStorage storage;
+
+	
+	@RequestMapping("/")
+		public String singleReview(Model model) {
+			Review review = new Review("First Review", "Gone With The Wind", "James Doe", new Category("Fiction"),
+			"So good I wanna slap my mama");
+			model.addAttribute("review", review);
+			return "review";
+		}
+	
+	@RequestMapping("/all_reviews")
+	public String getAllReviews(Model model) {
+		model.addAttribute("reviews", storage.findAllTheReviews());
+		return "reviews";
+	}
+	
+	
+	
+}
+
 	@Resource
 	private CategoryRepository categoryRepo;
 	@RequestMapping("/reviews/{id}")
@@ -25,11 +46,7 @@ public class HomeController {
 			return "review";
 		}
 
-	public String displayAllReviews(Model model) {
-		model.addAttribute("reviews", storage.findAllTheReviews());
-		
-		return "reviews";
-	}
+	
 	
 	@PostMapping("/add")
 	public String addReview(String bookTitle, String userName, String reviewTitle, String reviewBody, String categoryName) {
@@ -42,3 +59,4 @@ public class HomeController {
 	
 	
 }
+

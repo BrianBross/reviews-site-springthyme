@@ -32,7 +32,7 @@ public class HomeControllerTest {
 	
 	@Test
 	public void displayAllReviews() throws Exception {
-		String viewName = underTest.displayAllReviews(model);
+		String viewName = underTest.getAllReviews(model);
 		assertThat(viewName, is("reviews"));
 	}
 	
@@ -43,7 +43,7 @@ public class HomeControllerTest {
 		
 		when(mockStorage.findAllTheReviews()).thenReturn(Collections.singletonList(mockReview));
 		
-		underTest.displayAllReviews(model);
+		underTest.getAllReviews(model);
 		
 		verify(model).addAttribute("reviews", Collections.singletonList(mockReview));
 	}
