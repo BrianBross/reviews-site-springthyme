@@ -23,35 +23,36 @@
 
         <div class="review-container">
 
-            <section th:each = "review : ${storage}">
-          
+            <section th:each="review : ${reviewStorage}">
+
                 <article class="review-item">
 
-                        <section class="review-item__header">
-                            <h2 class="review-item__header-title" th:text="${review.reviewTitle}">First Review</h2>
-                            <h3 class="review-item__header-book" th:text="${review.productInfo}">Book 1 Title / Book 1 Author</h3>
-                            <!-- <section class="review-item__header-rating" th:text="${review.ranking}">****</section> -->
-                            <h4 class="review-item__header-review-author" th:text="${review.userName}">Bross-Hog</h4>
-                            <!-- <h5 class="review-item__header-date" th:text="${review.reviewDate}">10/2/2019</h5> -->
-                        </section>
+                    <section class="review-item__header">
+                        <h2 class="review-item__header-title" th:text="${review.reviewTitle}">First Review</h2>
+                        <h3 class="review-item__header-book" th:text="${review.bookTitle}">Book 1 Title / Book 1 Author
+                        </h3>
+                        <!-- <section class="review-item__header-rating" th:text="${review.ranking}">****</section> -->
+                        <h4 class="review-item__header-review-author" th:text="${review.userName}">Bross-Hog</h4>
+                        <!-- <h5 class="review-item__header-date" th:text="${review.reviewDate}">10/2/2019</h5> -->
+                    </section>
 
-                        <div class="review-body">
-                            <h5 class="review-item__body" th:text="${review.reviewBody}">
-            
-                                Lorem ipsum dolor sit amet, quando sadipscing necessitatibus ex mel, erroribus patrioque
-                                instructior
-                                sed
-                                eu.
-                            </h5>
-                        </div>
-                    </article>
+                    <div class="review-body">
+                        <h5 class="review-item__body" th:text="${review.reviewBody}">
+
+                            Lorem ipsum dolor sit amet, quando sadipscing necessitatibus ex mel, erroribus patrioque
+                            instructior
+                            sed
+                            eu.
+                        </h5>
+                    </div>
+                </article>
 
             </section>
 
         </div>
 
         <footer class="footer">
-            
+
         </footer>
     </div>
 </body>

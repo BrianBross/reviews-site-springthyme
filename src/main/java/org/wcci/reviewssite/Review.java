@@ -16,7 +16,7 @@ public class Review {
 	@GeneratedValue
 	private Long id;
 	
-	private String title;
+	private String reviewTitle;
 	private String bookTitle;
 	private String userName;
 	private LocalDate reviewDate = LocalDate.now();
@@ -26,10 +26,10 @@ public class Review {
 	private List<Tag> tags;
 	private String reviewBody;
 
-	public Review(String reviewTitle, String productInfo, String userName, 
+	public Review(String reviewTitle, String bookTitle, String userName, 
 			Category category, String reviewBody) {
-		this.title = reviewTitle;
-		this.bookTitle = productInfo;
+		this.reviewTitle = reviewTitle;
+		this.bookTitle = bookTitle;
 		this.userName = userName;
 		this.category = category;
 		this.reviewBody = reviewBody;
@@ -39,11 +39,11 @@ public class Review {
 		tags.add(tagToAdd);
 	}
 
-	public String getTitle() {
-		return title;
+	public String getReviewTitle() {
+		return reviewTitle;
 		
 	}
-	public String getProductInfo() {
+	public String getBookTitle() {
 		return bookTitle;
 	}
 	
@@ -61,7 +61,7 @@ public class Review {
 		result = prime * result + ((bookTitle == null) ? 0 : bookTitle.hashCode());
 		result = prime * result + ((reviewBody == null) ? 0 : reviewBody.hashCode());
 		result = prime * result + ((reviewDate == null) ? 0 : reviewDate.hashCode());
-		result = prime * result + ((title == null) ? 0 : title.hashCode());
+		result = prime * result + ((reviewTitle == null) ? 0 : reviewTitle.hashCode());
 		result = prime * result + ((userName == null) ? 0 : userName.hashCode());
 		return result;
 	}
@@ -95,10 +95,10 @@ public class Review {
 				return false;
 		} else if (!reviewDate.equals(other.reviewDate))
 			return false;
-		if (title == null) {
-			if (other.title != null)
+		if (reviewTitle == null) {
+			if (other.reviewTitle != null)
 				return false;
-		} else if (!title.equals(other.title))
+		} else if (!reviewTitle.equals(other.reviewTitle))
 			return false;
 		if (userName == null) {
 			if (other.userName != null)
@@ -110,8 +110,8 @@ public class Review {
 
 	@Override
 	public String toString() {
-		return "Review [reviewTitle=" + title + ", productInfo=" + bookTitle + ", userName=" + userName
-				+ ", reviewDate=" + reviewDate + ", productCategory=" + category + ", reviewBody=" + reviewBody
+		return "Review [reviewTitle=" + reviewTitle + ", bookTitle=" + bookTitle + ", userName=" + userName
+				+ ", reviewDate=" + reviewDate + ", category=" + category + ", reviewBody=" + reviewBody
 				+ "]";
 	}
 

@@ -15,7 +15,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HomeController {
 	
 	@Resource
-	private ReviewStorage storage;
+	private CategoryStorage categoryStorage;
+	@Resource
+	private ReviewStorage reviewStorage;
 
 	
 	@RequestMapping("/")
@@ -28,20 +30,14 @@ public class HomeController {
 	
 	@RequestMapping("/all_reviews")
 	public String getAllReviews(Model model) {
-		model.addAttribute("reviews", storage.findAllTheReviews());
+		model.addAttribute("reviews", reviewStorage.findAllTheReviews());
 		return "reviews";
 	}
-	
-	
-	
-}
 
-	@Resource
-	private CategoryRepository categoryRepo;
 	@RequestMapping("/reviews/{id}")
 		public String singleReview(@PathVariable Long id, Model model) {
 			
-			Review review = storage.findReview(id);
+			Review review = reviewStorage.findReview(id);
 			model.addAttribute("review", review );
 			return "review";
 		}
@@ -51,9 +47,9 @@ public class HomeController {
 	@PostMapping("/add")
 	public String addReview(String bookTitle, String userName, String reviewTitle, String reviewBody, String categoryName) {
 		Category category = new Category(categoryName);
-		categoryRepo.save(category);
+		categoryStorage.addCategory(category);
 		Review reviewToAdd = new Review(reviewTitle, bookTitle, userName, category, reviewBody);
-		reviewToAdd = storage.addReview(reviewToAdd);
+		reviewToAdd = reviewStorage.addReview(reviewToAdd);
 		return "redirect:/reviews/" +reviewToAdd.getId();
 	}
 	
