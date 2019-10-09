@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Add Review</title>
     <link rel="stylesheet" href="./css/main.css">
 </head>
@@ -27,7 +26,7 @@
             <div class="page-header">
                 <h2>Add New Review</h2>
             </div>
-            <form class="add-review-form" action="/review.html">
+            <form class="add-review-form" action="/add" method="POST"> 
                 <fieldset>
                     <div class="add-review-form__field">
                         <label for="book_title" class="add-review-form__field__label">Book title being reviewed:</label>
@@ -35,18 +34,36 @@
                             name="book_title"></input>
                     </div>
                     <div class="add-review-form__field">
+                        <label for="userName" class="add-review-form__field__label">userName :</label>
+                        <input class="add-review-form__field__input" type="text" id="userName"
+                            name="userName"></input>
+                    </div>
+                    <div class="add-review-form__field">
+                        <label for="reviewTitle" class="add-review-form__field__label">Enter your review title here  :</label>
+                        <input class="add-review-form__field__input" type="text" id="reviewTitle"
+                            name="reviewTitle"></input>
+                    </div>
+                    <div class="add-review-form__field">
+                        <label for="category" class="add-review-form__field__label">Enter category here:</label>
+                        <input class="add-review-form__field__input" type="text" id="category"
+                            name="category"></input>
+                    </div>
+                    
+                    
+                    <div class="add-review-form__field">
                         <label for="review_text" class="add-review-form__field__label">Add your review here:</label>
                         <textarea class="add-review-form__field__textarea" id="review_text"
                             name="review_text"></textarea>
                     </div>
-                    <div class="add-review-form__field">
+                   <!-- <div class="add-review-form__field"> 
                         <label for="review_image" class="add-review-form__field__label">Upload an image
                             (optional):</label>
                         <input class="add-review-form__field__input" type="text" id="review_image"
                             name="review_image"></input>
                     </div>
+                    -->
                     <div class="add-review-form__field">
-                        <input class="add-review-form__field__button primary_action" type="text" name="submit"
+                        <input class="add-review-form__field__button primary_action" type="submit" name="submit"
                             value="Submit Review">
                     </div>
                 </fieldset>

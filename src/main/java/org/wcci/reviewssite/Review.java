@@ -16,8 +16,8 @@ public class Review {
 	@GeneratedValue
 	private Long id;
 	
-	private String reviewTitle;
-	private String productInfo;
+	private String title;
+	private String bookTitle;
 	private String userName;
 	private LocalDate reviewDate = LocalDate.now();
 	@ManyToOne
@@ -28,8 +28,8 @@ public class Review {
 
 	public Review(String reviewTitle, String productInfo, String userName, 
 			Category category, String reviewBody) {
-		this.reviewTitle = reviewTitle;
-		this.productInfo = productInfo;
+		this.title = reviewTitle;
+		this.bookTitle = productInfo;
 		this.userName = userName;
 		this.category = category;
 		this.reviewBody = reviewBody;
@@ -39,12 +39,12 @@ public class Review {
 		tags.add(tagToAdd);
 	}
 
-	public String getReviewTitle() {
-		return reviewTitle;
+	public String getTitle() {
+		return title;
 		
 	}
 	public String getProductInfo() {
-		return productInfo;
+		return bookTitle;
 	}
 	
 	public String getUserName() {
@@ -58,10 +58,10 @@ public class Review {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((category == null) ? 0 : category.hashCode());
-		result = prime * result + ((productInfo == null) ? 0 : productInfo.hashCode());
+		result = prime * result + ((bookTitle == null) ? 0 : bookTitle.hashCode());
 		result = prime * result + ((reviewBody == null) ? 0 : reviewBody.hashCode());
 		result = prime * result + ((reviewDate == null) ? 0 : reviewDate.hashCode());
-		result = prime * result + ((reviewTitle == null) ? 0 : reviewTitle.hashCode());
+		result = prime * result + ((title == null) ? 0 : title.hashCode());
 		result = prime * result + ((userName == null) ? 0 : userName.hashCode());
 		return result;
 	}
@@ -80,10 +80,10 @@ public class Review {
 				return false;
 		} else if (!category.equals(other.category))
 			return false;
-		if (productInfo == null) {
-			if (other.productInfo != null)
+		if (bookTitle == null) {
+			if (other.bookTitle != null)
 				return false;
-		} else if (!productInfo.equals(other.productInfo))
+		} else if (!bookTitle.equals(other.bookTitle))
 			return false;
 		if (reviewBody == null) {
 			if (other.reviewBody != null)
@@ -95,10 +95,10 @@ public class Review {
 				return false;
 		} else if (!reviewDate.equals(other.reviewDate))
 			return false;
-		if (reviewTitle == null) {
-			if (other.reviewTitle != null)
+		if (title == null) {
+			if (other.title != null)
 				return false;
-		} else if (!reviewTitle.equals(other.reviewTitle))
+		} else if (!title.equals(other.title))
 			return false;
 		if (userName == null) {
 			if (other.userName != null)
@@ -110,7 +110,7 @@ public class Review {
 
 	@Override
 	public String toString() {
-		return "Review [reviewTitle=" + reviewTitle + ", productInfo=" + productInfo + ", userName=" + userName
+		return "Review [reviewTitle=" + title + ", productInfo=" + bookTitle + ", userName=" + userName
 				+ ", reviewDate=" + reviewDate + ", productCategory=" + category + ", reviewBody=" + reviewBody
 				+ "]";
 	}
@@ -126,4 +126,8 @@ public class Review {
 	}
 	
 	public Review() {}
+
+	public Long getId() {
+		return id;
+	}
 }
