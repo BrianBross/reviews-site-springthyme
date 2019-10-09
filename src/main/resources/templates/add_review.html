@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Add Review</title>
     <link rel="stylesheet" href="./css/main.css">
 </head>
@@ -27,7 +26,7 @@
             <div class="page-header">
                 <h2>Add New Review</h2>
             </div>
-            <form class="add-review-form" action="/review.html">
+            <form class="add-review-form" action="/reviews.html" method = "POST"> 
                 <fieldset>
                     <div class="add-review-form__field">
                         <label for="book_title" class="add-review-form__field__label">Book title being reviewed:</label>
@@ -46,7 +45,7 @@
                             name="review_image"></input>
                     </div>
                     <div class="add-review-form__field">
-                        <input class="add-review-form__field__button primary_action" type="text" name="submit"
+                        <input class="add-review-form__field__button primary_action" type="submit" name="submit"
                             value="Submit Review">
                     </div>
                 </fieldset>
