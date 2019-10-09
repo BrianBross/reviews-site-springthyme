@@ -16,7 +16,7 @@ public class Review {
 	private Long id;
 	
 	private String reviewTitle;
-	private String productInfo;
+	private String bookTitle;
 	private String userName;
 	private LocalDate reviewDate = LocalDate.now();
 	@ManyToOne
@@ -28,7 +28,7 @@ public class Review {
 	public Review(String reviewTitle, String productInfo, String userName, 
 			Category category, String reviewBody) {
 		this.reviewTitle = reviewTitle;
-		this.productInfo = productInfo;
+		this.bookTitle = productInfo;
 		this.userName = userName;
 		this.category = category;
 		this.reviewBody = reviewBody;
@@ -43,7 +43,7 @@ public class Review {
 		
 	}
 	public String getProductInfo() {
-		return productInfo;
+		return bookTitle;
 	}
 	
 	public String getUserName() {
@@ -57,7 +57,7 @@ public class Review {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((category == null) ? 0 : category.hashCode());
-		result = prime * result + ((productInfo == null) ? 0 : productInfo.hashCode());
+		result = prime * result + ((bookTitle == null) ? 0 : bookTitle.hashCode());
 		result = prime * result + ((reviewBody == null) ? 0 : reviewBody.hashCode());
 		result = prime * result + ((reviewDate == null) ? 0 : reviewDate.hashCode());
 		result = prime * result + ((reviewTitle == null) ? 0 : reviewTitle.hashCode());
@@ -79,10 +79,10 @@ public class Review {
 				return false;
 		} else if (!category.equals(other.category))
 			return false;
-		if (productInfo == null) {
-			if (other.productInfo != null)
+		if (bookTitle == null) {
+			if (other.bookTitle != null)
 				return false;
-		} else if (!productInfo.equals(other.productInfo))
+		} else if (!bookTitle.equals(other.bookTitle))
 			return false;
 		if (reviewBody == null) {
 			if (other.reviewBody != null)
@@ -109,7 +109,7 @@ public class Review {
 
 	@Override
 	public String toString() {
-		return "Review [reviewTitle=" + reviewTitle + ", productInfo=" + productInfo + ", userName=" + userName
+		return "Review [reviewTitle=" + reviewTitle + ", productInfo=" + bookTitle + ", userName=" + userName
 				+ ", reviewDate=" + reviewDate + ", productCategory=" + category + ", reviewBody=" + reviewBody
 				+ "]";
 	}
