@@ -11,26 +11,32 @@
 
 
 <body>
-    <article class="review-item">
-        <section class="review-item__header">
-            <h2 class="review-item__header-title" th:text="${review.title}">First Review</h2>
-            <h3 class="review-item__header-book" th:text="${review.summary}">Book 1 Title / Book 1 Author</h3>
-            <section class="review-item__header-rating" th:text="${review.ranking}">****</section>
-            <h4 class="review-item__header-review-author" th:text="${review.}">Bross-Hog</h4>
-            <h5 class="review-item__header-date">10/2/2019</h5>
-        </section>
-        <hr>
-        <section class="review-item__body">
-            <p>
-                Lorem ipsum dolor sit amet, quando sadipscing necessitatibus ex mel, erroribus patrioque
-                instructior
-                sed
-                eu. Odio munere senserit no ius, nec te elit nonumy splendide, fugit principes vis in. Ei cum
-                menandri
-                sapientem definitiones, debet populo deleniti qui no. Usu libris labores ne. Nisl utroque
-                voluptaria
-                nam
-                cu.
-            </p>
-        </section>
-    </article>
+    <main>
+        
+        <article class="review-item">
+            <section class="review-item__header">
+                <h2 class="review-item__header-title" th:text="${review.reviewTitle}">First Review</h2>
+                <h3 class="review-item__header-book" th:text="${review.productInfo}">Book 1 Title / Book 1 Author</h3>
+                <!-- <section class="review-item__header-rating" th:text="${review.ranking}">****</section> -->
+                <h4 class="review-item__header-review-author" th:text="${review.userName}">Bross-Hog</h4>
+                <!-- <h5 class="review-item__header-date" th:text="${review.reviewDate}">10/2/2019</h5> -->
+                
+            </section>
+            <hr />
+            <div class="review-body">
+            <h5 class="review-item__body" th:text="${review.reviewBody}">
+            
+                    Lorem ipsum dolor sit amet, quando sadipscing necessitatibus ex mel, erroribus patrioque
+                    instructior
+                    sed
+                    eu. Odio munere senserit no ius, nec te elit nonumy splendide, fugit principes vis in. Ei cum
+                    menandri
+                    sapientem definitiones, debet populo deleniti qui no. Usu libris labores ne. Nisl utroque
+                    voluptaria
+                    nam
+                    cu.
+                </h5>
+        </div>
+        </article>
+    
+    </main>
