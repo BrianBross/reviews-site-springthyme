@@ -26,10 +26,6 @@ public class HomeController {
 	
 	@RequestMapping("/all_reviews")
 	public String getAllReviews(Model model) {
-		Review review = new Review("Second Review", "The Birds", "Jimmy Roe", new Category("Horror"),
-				"Scared me so much!");
-		Review review1 = new Review("Third Review", "Beer in Hell", "Tucker Max", new Category("Comedy"),
-				"Reee-diculous!!!");
 		model.addAttribute("reviews", storage.findAllTheReviews());
 		return "reviews";
 	}
