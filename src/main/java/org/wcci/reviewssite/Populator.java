@@ -1,5 +1,6 @@
 package org.wcci.reviewssite;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,8 +8,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 @Component
-public class ReviewPopulator implements CommandLineRunner {
-	
+public class Populator implements CommandLineRunner {
 	@Autowired
 	private ReviewStorage reviewStorage;
 	@Autowired
@@ -16,6 +16,8 @@ public class ReviewPopulator implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
+		
+		populateCategories();
 		
 		Category category1 = new Category("Horror");
 		Category category2 = new Category("Comedy");
@@ -59,13 +61,33 @@ public class ReviewPopulator implements CommandLineRunner {
 		reviewStorage.addReview(review5);
 		reviewStorage.addReview(review6);
 		reviewStorage.addReview(review7);
-		reviewStorage.addReview(review8);
+		reviewStorage.addReview(review8);		
 		
-//		// delete this section later
-//		
-//		Collection allReviews = (Collection) reviewStorage.findAllTheReviews();		
-//		
-//		Long identifier = allReviews
-//		System.out.println();
+
+	}
+	
+	public void populateCategories() {
+		categoryStorage.addCategory(new Category("Science Fiction"));
+		categoryStorage.addCategory(new Category("Mystery & Suspense"));
+		categoryStorage.addCategory(new Category("Romance"));
+		categoryStorage.addCategory(new Category("Horror"));
+		categoryStorage.addCategory(new Category("Fantasy"));
+		categoryStorage.addCategory(new Category("Action & Adventure"));
+		categoryStorage.addCategory(new Category("Humor"));
+		categoryStorage.addCategory(new Category("Comedy"));
+	}
+
+	
+	public void test() {
+
+		ArrayList<String> categoryListNonFiction = new ArrayList<String>();
+		
+		categoryListNonFiction.add("Health & Wellness");
+		categoryListNonFiction.add("Education");
+		categoryListNonFiction.add("Biography");
+		categoryListNonFiction.add("History");
+		categoryListNonFiction.add("Computer");
+		categoryListNonFiction.add("Religion");
+		categoryListNonFiction.add("Art & Music");
 	}
 }
