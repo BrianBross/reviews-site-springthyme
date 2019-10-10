@@ -45,12 +45,19 @@ public class HomeController {
 	
 	
 	@PostMapping("/add")
-	public String addReview(String bookTitle, String userName, String reviewTitle, String reviewBody, String categoryName) {
+	public String addReview(String reviewTitle, String bookTitle, String userName, String categoryName, String reviewBody) {
 		Category category = new Category(categoryName);
 		categoryStorage.addCategory(category);
+		
+		System.out.println("PostMapping before adding review has bookTitle: " + bookTitle + " and reviewBody: " + reviewBody);
+		
 		Review reviewToAdd = new Review(reviewTitle, bookTitle, userName, category, reviewBody);
-		reviewToAdd = reviewStorage.addReview(reviewToAdd);
-		return "redirect:/reviews/" +reviewToAdd.getId();
+		reviewStorage.addReview(reviewToAdd);
+		Long reviewId = reviewToAdd.getId();
+		
+		System.out.println("PostMapping has bookTitle: " + reviewToAdd.getBookTitle() + " and reviewBody: " + reviewToAdd.getReviewBody());
+		
+		return "redirect:/reviews/" + reviewId;
 	}
 	
 	
