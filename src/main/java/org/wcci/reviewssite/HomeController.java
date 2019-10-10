@@ -14,9 +14,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class HomeController {
 	
-	@Resource
+	@Autowired
 	private CategoryStorage categoryStorage;
-	@Resource
+	@Autowired
 	private ReviewStorage reviewStorage;
 
 	

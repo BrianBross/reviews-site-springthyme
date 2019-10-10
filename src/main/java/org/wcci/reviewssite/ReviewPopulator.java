@@ -18,10 +18,10 @@ public class ReviewPopulator implements CommandLineRunner {
 		Category category2 = new Category("Comedy");
 		categoryStorage.addCategory(category);
 		categoryStorage.addCategory(category2);
-		
+		System.out.println("this is working");
 		Review review = new Review("Second Review", "The Birds", "Jimmy Roe", category,
 				"Scared me so much!");
-		Review review1 = new Review("Third Review", "Beer in Hell", "Tucker Max", category2,
+		Review review1 = new Review("Third Review", "I Hope They Serve Beer in Hell", "Tucker Max", category2,
 				"Reee-diculous!!!");
 
 		reviewStorage.addReview(review);
