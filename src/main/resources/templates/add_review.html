@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Review</title>
-    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="/css/main.css">
+    
 </head>
 
 
@@ -26,7 +27,9 @@
             <div class="page-header">
                 <h2>Add New Review</h2>
             </div>
-            <form class="add-review-form" action="/add" method="POST">
+
+            <form class="add-review-form" action="/add" method="POST"> 
+              
                 <fieldset>
                     <div class="add-review-form__field">
                         <label for="bookTitle" class="add-review-form__field__label">Book title being reviewed:</label>
@@ -35,32 +38,28 @@
                     </div>
                     <div class="add-review-form__field">
                         <label for="userName" class="add-review-form__field__label">userName :</label>
-                        <input class="add-review-form__field__input" type="text" id="userName" name="userName"></input>
+
+                        <input class="add-review-form__field__input" type="text" id="userName"
+                            name="userName"></input>
                     </div>
                     <div class="add-review-form__field">
-                        <label for="reviewTitle" class="add-review-form__field__label">Enter your review title here
-                            :</label>
+                        <label for="reviewTitle" class="add-review-form__field__label">Enter your review title here  :</label>
                         <input class="add-review-form__field__input" type="text" id="reviewTitle"
                             name="reviewTitle"></input>
                     </div>
-
                     <div class="add-review-form__field">
-                        <label for="categorySelection" class="add-review-form__field__label">Select category:</label>
-                        <dropdown>
-                            <select class="add-review-form__field__dropdown" name="categoryName">
-                                <option th:each="category : ${categories}" th:value="${category.id}"
-                                    th:text="${category.categoryName}">default</option>
-                            </select>
-                        </dropdown>
-
-
-                    </div>
-
+                        <label for="categoryName" class="add-review-form__field__label">Enter category here:</label>
+                        <input class="add-review-form__field__input" type="text" id="categoryName"
+                            name="categoryName"></input>
+                    </div>                    
+                    
                     <div class="add-review-form__field">
                         <label for="reviewBody" class="add-review-form__field__label">Add your review here:</label>
-                        <textarea class="add-review-form__field__textarea" id="reviewBody" name="reviewBody"></textarea>
+                        <textarea class="add-review-form__field__textarea" id="reviewBody"
+                            name="reviewBody"></textarea>
                     </div>
-                    <!-- <div class="add-review-form__field"> 
+                   <!-- <div class="add-review-form__field"> 
+
                         <label for="review_image" class="add-review-form__field__label">Upload an image
                             (optional):</label>
                         <input class="add-review-form__field__input" type="text" id="review_image"
