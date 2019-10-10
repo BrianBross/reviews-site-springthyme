@@ -45,7 +45,7 @@ public class HomeController {
 	
 	
 	@PostMapping("/add")
-	public String addReview(String reviewTitle, String bookTitle, String userName, String categoryName, String reviewBody) {
+	public String addReview1(String reviewTitle, String bookTitle, String userName, String categoryName, String reviewBody) {
 		Category category = new Category(categoryName);
 		categoryStorage.addCategory(category);
 		
