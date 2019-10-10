@@ -7,6 +7,7 @@ import javax.annotation.Resource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,7 +21,7 @@ public class HomeController {
 	private ReviewStorage reviewStorage;
 
 	
-	@RequestMapping("/")
+	@GetMapping("/")
 		public String singleReview(Model model) {
 			Review review = new Review("First Review", "Gone With The Wind", "James Doe", new Category("Fiction"),
 			"So good I wanna slap my mama");
@@ -28,13 +29,19 @@ public class HomeController {
 			return "review";
 		}
 	
-	@RequestMapping("/all_reviews")
+	@GetMapping("/all_reviews")
 	public String getAllReviews(Model model) {
 		model.addAttribute("reviews", reviewStorage.findAllTheReviews());
 		return "reviews";
 	}
+	
+	@GetMapping("/add_review")
+	public String getAddReview(Model model) {
+		model.addAttribute("categories", categoryStorage.findAllTheCategories());
+		return "add_review";
+	}
 
-	@RequestMapping("/reviews/{id}")
+	@GetMapping("/reviews/{id}")
 		public String singleReview(@PathVariable Long id, Model model) {
 			
 			Review review = reviewStorage.findReview(id);
@@ -57,7 +64,7 @@ public class HomeController {
 		
 		System.out.println("PostMapping has bookTitle: " + reviewToAdd.getBookTitle() + " and reviewBody: " + reviewToAdd.getReviewBody());
 		
-		return "redirect:/reviews/" + reviewId;
+		return "redirect:/all_reviews";
 	}
 	
 	
