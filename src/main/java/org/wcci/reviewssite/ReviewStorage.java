@@ -12,8 +12,8 @@ public class ReviewStorage {
 	
 
 
-	public Review addReview(Review reviewToAdd) {
-		return reviewRepo.save(reviewToAdd);
+	public void addReview(Review reviewToAdd) {
+		reviewRepo.save(reviewToAdd);
 	}
 
 	public Review findReview(Long id) {
