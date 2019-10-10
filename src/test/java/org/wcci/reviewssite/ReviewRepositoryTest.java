@@ -7,7 +7,7 @@ import static org.junit.Assert.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collection;
-
+import static org.mockito.Mockito.verify;
 import org.hamcrest.Matcher;
 import org.junit.Before;
 import org.junit.Test;
@@ -39,25 +39,30 @@ public class ReviewRepositoryTest {
 		mockCategoryStorage.addCategory(underTestCategory);
 		
 		Collection allCategories = (Collection) mockCategoryStorage.findAllTheCategories();
-		assertThat(allCategories.size(), is(1));
+		
+		verify(mockCategoryStorage).addCategory(underTestCategory);
 	}
 	
-//	@Test
-//	public void shouldBeAbleToAddReview() throws Exception {
-//		String underTestReviewTitle = "Test Review Title";
-//		String underTestBookTitle = "Test Book Title";
-//		String underTestUserName = "Test Author";
-//		String underTestReviewBody = "Great read.";
-//		
-//		Review underTestReview = new Review(underTestReviewTitle, underTestBookTitle, underTestUserName,
-//				underTestProductCategory, underTestReviewBody);
-//		mockReviewStorage.addReview(underTestReview);
-//		
-//		Collection allReviews = (Collection) mockReviewStorage.findAllTheReviews();
-//		
-//		assertThat(allReviews.size(), is(1));
-//		
-//	}
+	
+	@Test
+	public void shouldBeAbleToAddReview() throws Exception {
+		String underTestReviewTitle = "Test Review Title";
+		String underTestBookTitle = "Test Book Title";
+		String underTestUserName = "Test Author";
+		String underTestReviewBody = "Great read.";
+		
+		Category underTestCategory = new Category("test category");
+		mockCategoryStorage.addCategory(underTestCategory);
+		
+		Review underTestReview = new Review(underTestReviewTitle, underTestBookTitle, underTestUserName,
+				underTestCategory, underTestReviewBody);
+		mockReviewStorage.addReview(underTestReview);
+		
+		Collection allReviews = (Collection) mockReviewStorage.findAllTheReviews();
+		
+		verify(mockReviewStorage).addReview(underTestReview);
+		
+	}
 
 //	@Test
 //	public void shouldBeAbleToAddMulitpleReviews() throws Exception {
