@@ -1,5 +1,7 @@
 package org.wcci.reviewssite;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -18,7 +20,7 @@ public class ReviewPopulator implements CommandLineRunner {
 		Category category2 = new Category("Comedy");
 		categoryStorage.addCategory(category);
 		categoryStorage.addCategory(category2);
-		System.out.println("this is working");
+		
 		Review review = new Review("Second Review", "The Birds", "Jimmy Roe", category,
 				"Scared me so much!");
 		Review review1 = new Review("Third Review", "I Hope They Serve Beer in Hell", "Tucker Max", category2,
@@ -26,5 +28,12 @@ public class ReviewPopulator implements CommandLineRunner {
 
 		reviewStorage.addReview(review);
 		reviewStorage.addReview(review1);
+		
+//		// delete this section later
+//		
+//		Collection allReviews = (Collection) reviewStorage.findAllTheReviews();		
+//		
+//		Long identifier = allReviews
+//		System.out.println();
 	}
 }

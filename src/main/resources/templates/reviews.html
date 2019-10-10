@@ -28,7 +28,8 @@
                 <article class="review-item">
 
                     <section class="review-item__header">
-                        <h2 class="review-item__header-title" th:text="${review.reviewTitle}">First Review</h2>
+                        <h2 class="review-item__header-title"><a th:text="${review.reviewTitle}" th:href="|../reviews/${review.id}|">First Review</a></h2>
+                        <h2 th:text="${review.id}">id number</h2>
                         <h3 class="review-item__header-book" th:text="${review.bookTitle}">Book 1 Title / Book 1 Author
                         </h3>
                         <!-- <section class="review-item__header-rating" th:text="${review.ranking}">****</section> -->
