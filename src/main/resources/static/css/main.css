@@ -1,4 +1,6 @@
-* {
+@import url('https://fonts.googleapis.com/css?family=Lobster&display=swap');
+*
+{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -19,15 +21,22 @@ html {
 }
 
 .header {
+  display: flex;
   grid-area: 1 / 1 / 1 / 3;
-  background-color:black;
-  text-align: center;
+  background-image: url("../images/bookheadimage.jpg");
+  justify-content:center;
+  align-items: center;
 }
 
 .header-title {
-  font-size: 60px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  background-color: black;
+  font: 80px/1 "Lobster", sans-serif;
   color: white;
   margin: 0.8rem;
+  max-width:35%;
 }
 
 .footer {
@@ -61,6 +70,11 @@ html {
   display: flex;
   flex-direction: column;
   padding: 0.5rem;
+}
+.review-item_body {
+  font-size: 1.5rem;
+
+
 }
 
 
