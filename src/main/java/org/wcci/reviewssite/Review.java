@@ -24,6 +24,7 @@ public class Review {
 	private Category category;
 	@ManyToMany
 	private List<Tag> tags;
+	private String categoryName;
 	private String reviewBody;
 
 	public Review(String reviewTitle, String bookTitle, String userName, 
@@ -33,6 +34,7 @@ public class Review {
 		this.userName = userName;
 		this.category = category;
 		this.reviewBody = reviewBody;
+		this.categoryName = category.getCategoryName();
 	}
 	
 	public void addTagToReview(Tag tagToAdd) {
@@ -47,21 +49,49 @@ public class Review {
 		return bookTitle;
 	}
 	
+	public String getCategoryName() {
+		return categoryName;
+	}
+	
 	public String getUserName() {
 		return  userName;
 	}
 	
+	
+	public LocalDate getReviewDate( ) {
+		return reviewDate;
+		
+	}
+	
+	public String getReviewBody() {
+		return reviewBody;
+	}
+	
+	public Review() {}
 
+	public Long getId() {
+		return id;
+	}
+
+	@Override
+	public String toString() {
+		return "Review [id=" + id + ", reviewTitle=" + reviewTitle + ", bookTitle=" + bookTitle + ", userName="
+				+ userName + ", reviewDate=" + reviewDate + ", category=" + category + ", tags=" + tags
+				+ ", categoryName=" + categoryName + ", reviewBody=" + reviewBody + "]";
+	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((category == null) ? 0 : category.hashCode());
 		result = prime * result + ((bookTitle == null) ? 0 : bookTitle.hashCode());
+		result = prime * result + ((category == null) ? 0 : category.hashCode());
+		result = prime * result + ((categoryName == null) ? 0 : categoryName.hashCode());
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((reviewBody == null) ? 0 : reviewBody.hashCode());
 		result = prime * result + ((reviewDate == null) ? 0 : reviewDate.hashCode());
 		result = prime * result + ((reviewTitle == null) ? 0 : reviewTitle.hashCode());
+		result = prime * result + ((tags == null) ? 0 : tags.hashCode());
 		result = prime * result + ((userName == null) ? 0 : userName.hashCode());
 		return result;
 	}
@@ -75,15 +105,25 @@ public class Review {
 		if (getClass() != obj.getClass())
 			return false;
 		Review other = (Review) obj;
+		if (bookTitle == null) {
+			if (other.bookTitle != null)
+				return false;
+		} else if (!bookTitle.equals(other.bookTitle))
+			return false;
 		if (category == null) {
 			if (other.category != null)
 				return false;
 		} else if (!category.equals(other.category))
 			return false;
-		if (bookTitle == null) {
-			if (other.bookTitle != null)
+		if (categoryName == null) {
+			if (other.categoryName != null)
 				return false;
-		} else if (!bookTitle.equals(other.bookTitle))
+		} else if (!categoryName.equals(other.categoryName))
+			return false;
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
 			return false;
 		if (reviewBody == null) {
 			if (other.reviewBody != null)
@@ -100,6 +140,11 @@ public class Review {
 				return false;
 		} else if (!reviewTitle.equals(other.reviewTitle))
 			return false;
+		if (tags == null) {
+			if (other.tags != null)
+				return false;
+		} else if (!tags.equals(other.tags))
+			return false;
 		if (userName == null) {
 			if (other.userName != null)
 				return false;
@@ -107,27 +152,6 @@ public class Review {
 			return false;
 		return true;
 	}
-
-	@Override
-	public String toString() {
-		return "Review [reviewTitle=" + reviewTitle + ", bookTitle=" + bookTitle + ", userName=" + userName
-				+ ", reviewDate=" + reviewDate + ", category=" + category + ", reviewBody=" + reviewBody
-				+ "]";
-	}
-
 	
-	public LocalDate getReviewDate( ) {
-		return reviewDate;
-		
-	}
 	
-	public String getReviewBody() {
-		return reviewBody;
-	}
-	
-	public Review() {}
-
-	public Long getId() {
-		return id;
-	}
 }
