@@ -24,6 +24,18 @@ public class Category {
 		this.categoryName = nameOfCategory;
 	}
 
+	public Long getId() {
+		return id;
+	}
+
+	public String getCategoryName() {
+		return categoryName;
+	}
+
+	public List<Review> getReviews() {
+		return reviews;
+	}
+
 	@Override
 	public String toString() {
 		return "Category [id=" + id + ", categoryName=" + categoryName + ", reviews=" + reviews + "]";

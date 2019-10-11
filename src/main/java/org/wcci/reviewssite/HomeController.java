@@ -1,9 +1,5 @@
 package org.wcci.reviewssite;
 
-import java.time.LocalDate;
-
-import javax.annotation.Resource;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -36,8 +32,8 @@ public class HomeController {
 	}
 	
 	@GetMapping("/add_review")
-	public String getAddReview(Model model) {
-		model.addAttribute("categories", categoryStorage.findAllTheCategories());
+	public String getAddReview(Model model) {		
+		model.addAttribute("categories", categoryStorage.findAllTheCategories()); 
 		return "add_review";
 	}
 

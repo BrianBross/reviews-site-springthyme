@@ -17,7 +17,7 @@ public class Populator implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		
-		populateCategories();
+//		populateCategories();
 		
 		Category category1 = new Category("Horror");
 		Category category2 = new Category("Comedy");
