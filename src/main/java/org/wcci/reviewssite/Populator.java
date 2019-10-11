@@ -27,7 +27,7 @@ public class Populator implements CommandLineRunner {
 		Category category7 = new Category("Teen");
 		Category category8 = new Category("Self-Help");
 		
-		Tag tag1 = new Tag("Page Turner");
+		Tag tag1 = new Tag("page turner");
 		Tag tag2 = new Tag("exhilirating");
 		Tag tag3 = new Tag("breath taking");
 		Tag tag4 = new Tag("thrlling");
