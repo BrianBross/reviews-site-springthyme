@@ -7,10 +7,6 @@ import org.springframework.stereotype.Repository;
 public class ReviewStorage {
 	@Autowired
 	ReviewRepository reviewRepo;
-	
-	//may need an author here in the future
-	
-
 
 	public void addReview(Review reviewToAdd) {
 		reviewRepo.save(reviewToAdd);
@@ -21,12 +17,6 @@ public class ReviewStorage {
 	}
 
 	public Iterable<Review> findAllTheReviews() {
-		return reviewRepo.findAll();
+		return reviewRepo.findAllByOrderByIdDesc();
 	}
-	
-	
-
-	
-	
-
 }

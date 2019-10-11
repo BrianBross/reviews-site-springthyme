@@ -34,13 +34,12 @@ public class HomeController {
 	@GetMapping("/add_review")
 	public String getAddReview(Model model) {
 		model.addAttribute("categories", categoryStorage.findAllTheCategories());
-		model.addAttribute("tags", tagStorage.findAllTheCategories());
+		model.addAttribute("tags", tagStorage.findAllTheTags());
 		return "add_review";
 	}
 
 	@GetMapping("/reviews/{id}")
 	public String singleReview(@PathVariable Long id, Model model) {
-
 		Review review = reviewStorage.findReview(id);
 		model.addAttribute("review", review);
 		return "review";
@@ -51,17 +50,8 @@ public class HomeController {
 			String reviewBody) {
 		Category category = new Category(categoryName);
 		categoryStorage.addCategory(category);
-
-		System.out.println(
-				"PostMapping before adding review has bookTitle: " + bookTitle + " and reviewBody: " + reviewBody);
-
 		Review reviewToAdd = new Review(reviewTitle, bookTitle, userName, category, reviewBody);
 		reviewStorage.addReview(reviewToAdd);
-		Long reviewId = reviewToAdd.getId();
-
-		System.out.println("PostMapping has bookTitle: " + reviewToAdd.getBookTitle() + " and reviewBody: "
-				+ reviewToAdd.getReviewBody());
-
 		return "redirect:/all_reviews";
 	}
 
