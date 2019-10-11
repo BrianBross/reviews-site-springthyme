@@ -9,27 +9,40 @@
     <link rel="stylesheet" href="/css/main.css">
 </head>
 
-
 <body>
-    
-            <div class="wrapper">
-                    <header class="header">
-                        <h1 class="header-title">Millie's Book Barn</h1>
-                    </header>
-                    <section class="navigation-bar">
-                        <nav>Create a Post</nav>
-                        <nav> Delete a Post</nav>
-                        <nav> Edit a Post</nav>
-                    </section>
+
+    <div class="wrapper">
+        <header class="header">
+            <h1 class="header-title">Millie's Book Barn</h1>
+        </header>
+        <section class="navigation-bar">
+            <nav>Create a Post</nav>
+            <nav> Delete a Post</nav>
+            <nav> Edit a Post</nav>
+        </section>
 
         <article class="review-item">
             <section class="review-item__header">
-                <h2 class="review-item__header-title" th:text="${review.reviewTitle}">First Review</h2>
+
+                <h2 class="review-item__header-title">
+                    <label for="reviewTitle">Book title being reviewed:</label>
+                    <div id="reviewTitle" th:text="${review.reviewTitle}">Default Review Title</div>
+
+                </h2>
+
+
+
+
+
+
+
+
                 <h3 class="review-item__header-book" th:text="${review.bookTitle}">Book 1 Title / Book 1 Author</h3>
                 <h3 class="review-item__header-category" th:text="${review.categoryName}">Book Category</h3>
-                <!-- <section class="review-item__header-rating" th:text="${review.ranking}">****</section> -->
                 <h4 class="review-item__header-review-author" th:text="${review.userName}">Bross-Hog</h4>
-                <!-- <h5 class="review-item__header-date" th:text="${review.reviewDate}">10/2/2019</h5> -->
+                <!--  <h5 class="review-item__header-tag" th:text="${tag.tagName}">tag1</h5>-->
+                6
+                <h5 class="review-item__header-date" th:text="${review.reviewDate}">10/2/2019</h5>
 
             </section>
             <div class="review-body">
@@ -45,7 +58,7 @@
         <footer class="footer">
 
         </footer>
-        </div>
+    </div>
 </body>
 
 </html>
