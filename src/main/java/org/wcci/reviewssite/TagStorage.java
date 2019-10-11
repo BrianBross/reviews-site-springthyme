@@ -16,7 +16,7 @@ public class TagStorage {
 		return tagRepo.findById(id).get();
 	}
 	
-	public Iterable<Tag> findAllTheCategories(){
+	public Iterable<Tag> findAllTheCategoriesOrderByCategoryName(){
 		return tagRepo.findAll();
 	}
 

@@ -34,7 +34,7 @@ public class HomeController {
 	@GetMapping("/add_review")
 	public String getAddReview(Model model) {
 		model.addAttribute("categories", categoryStorage.findAllTheCategories());
-		model.addAttribute("tags", tagStorage.findAllTheCategories());
+		model.addAttribute("tags", tagStorage.findAllTheCategoriesOrderByCategoryName());
 		return "add_review";
 	}
 
