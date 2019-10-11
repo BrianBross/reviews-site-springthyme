@@ -13,11 +13,11 @@ public class Populator implements CommandLineRunner {
 	private ReviewStorage reviewStorage;
 	@Autowired
 	private CategoryStorage categoryStorage;
-
+	@Autowired
+	private TagStorage tagStorage;
 	@Override
 	public void run(String... args) throws Exception {
 		
-//		populateCategories();
 		
 		Category category1 = new Category("Horror");
 		Category category2 = new Category("Comedy");
@@ -28,6 +28,17 @@ public class Populator implements CommandLineRunner {
 		Category category7 = new Category("Teen");
 		Category category8 = new Category("Self-Help");
 		
+		Tag tag1 = new Tag("Page Turner");
+		Tag tag2 = new Tag("exhilirating");
+		Tag tag3 = new Tag("breath taking");
+		Tag tag4 = new Tag("thrlling");
+		Tag tag5 = new Tag("meh");
+		Tag tag6 = new Tag("exhausting");
+		Tag tag7 = new Tag("creepy");
+		Tag tag8 = new Tag("humorous");
+		Tag tag9 = new Tag("adequate");
+		Tag tag10 = new Tag("brilliant");
+								
 		categoryStorage.addCategory(category1);
 		categoryStorage.addCategory(category2);
 		categoryStorage.addCategory(category3);
@@ -36,6 +47,18 @@ public class Populator implements CommandLineRunner {
 		categoryStorage.addCategory(category6);
 		categoryStorage.addCategory(category7);
 		categoryStorage.addCategory(category8);
+		
+		tagStorage.addTag(tag1);
+		tagStorage.addTag(tag2);
+		tagStorage.addTag(tag3);
+		tagStorage.addTag(tag4);
+		tagStorage.addTag(tag5);
+		tagStorage.addTag(tag6);
+		tagStorage.addTag(tag7);
+		tagStorage.addTag(tag8);
+		tagStorage.addTag(tag9);
+		tagStorage.addTag(tag10);
+		
 		
 		Review review1 = new Review("First Review", "The Birds", "Jimmy Roe", 
 				category1,"Scared me so much!");
@@ -66,16 +89,7 @@ public class Populator implements CommandLineRunner {
 
 	}
 	
-	public void populateCategories() {
-		categoryStorage.addCategory(new Category("Science Fiction"));
-		categoryStorage.addCategory(new Category("Mystery & Suspense"));
-		categoryStorage.addCategory(new Category("Romance"));
-		categoryStorage.addCategory(new Category("Horror"));
-		categoryStorage.addCategory(new Category("Fantasy"));
-		categoryStorage.addCategory(new Category("Action & Adventure"));
-		categoryStorage.addCategory(new Category("Humor"));
-		categoryStorage.addCategory(new Category("Comedy"));
-	}
+	
 
 	
 	public void test() {
