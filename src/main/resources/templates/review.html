@@ -32,8 +32,9 @@
 
                 <h3 class="review-item__header-book" th:text="'Book: '+${review.bookTitle}">Book 1 Title / Book 1 Author</h3>
                 <h3 class="review-item__header-category" th:text="'Category: '+${review.categoryName}">Book Category</h3>
-                <h3 class="review-item__header-review-author" th:text="'Reviewr: '+${review.userName}">Bross-Hog</h3>
-                <!--  <h5 class="review-item__header-tag" th:text="${tag.tagName}">tag1</h5>-->
+                <h3 class="review-item__header-review-author" th:text="'Reviewer: '+${review.userName}">Bross-Hog</h3>
+                <section th:each="tag : ${tags}">
+                <h5 class="review-item__header-tag" th:text="${tag.tagName}">tag1</h5></section>
                 
                 <h3 class="review-item__header-date" th:text="'Date Posted: '+${review.reviewDate}">10/2/2019</h3>
 
