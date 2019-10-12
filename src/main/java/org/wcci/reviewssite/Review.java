@@ -1,6 +1,7 @@
 package org.wcci.reviewssite;
 
 import java.time.LocalDate;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -22,19 +23,20 @@ public class Review {
 	private LocalDate reviewDate = LocalDate.now();
 	@ManyToOne
 	private Category category;
-	@ManyToMany
+	@ManyToMany 
 	private List<Tag> tags;
 	private String categoryName;
 	private String reviewBody;
 
 	public Review(String reviewTitle, String bookTitle, String userName, 
-			Category category, String reviewBody) {
+			Category category, String reviewBody, Tag... tags) {
 		this.reviewTitle = reviewTitle;
 		this.bookTitle = bookTitle;
 		this.userName = userName;
 		this.category = category;
 		this.reviewBody = reviewBody;
 		this.categoryName = category.getCategoryName();
+		this.tags = Arrays.asList(tags);
 	}
 	
 	public void addTagToReview(Tag tagToAdd) {

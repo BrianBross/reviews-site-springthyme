@@ -50,8 +50,8 @@
                     </div>
 
                     <div class="add-review-form__field">
-                        <label for="categoryName" class="add-review-form__field__label">Select category:</label>
-                        <select class="add-review-form__field__dropdown" name="categoryName" id="categoryName">
+                        <label for="categoryId" class="add-review-form__field__label">Select category:</label>
+                        <select class="add-review-form__field__dropdown" name="categoryId" id="categoryId">
                             <option value="">
                             </option>
                             <option th:each="category : ${categories}" th:value="${category.id}"

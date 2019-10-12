@@ -16,7 +16,7 @@ public class Tag {
 
 	private String tagName;
 
-	@ManyToMany
+	@ManyToMany (mappedBy="tags")
 	private List<Review> reviews;
 
 	public Tag() {
