@@ -27,6 +27,7 @@ public class Review {
 	private List<Tag> tags;
 	private String categoryName;
 	private String reviewBody;
+	private int likes;
 
 	public Review(String reviewTitle, String bookTitle, String userName, 
 			Category category, String reviewBody, Tag... tags) {
@@ -74,12 +75,13 @@ public class Review {
 	public Long getId() {
 		return id;
 	}
-
-	@Override
-	public String toString() {
-		return "Review [id=" + id + ", reviewTitle=" + reviewTitle + ", bookTitle=" + bookTitle + ", userName="
-				+ userName + ", reviewDate=" + reviewDate + ", category=" + category + ", tags=" + tags
-				+ ", categoryName=" + categoryName + ", reviewBody=" + reviewBody + "]";
+	
+	public void setLikes() {
+		this.likes++;
+	}
+	
+	public int getLikes() {
+		return likes;
 	}
 
 	@Override
@@ -90,6 +92,7 @@ public class Review {
 		result = prime * result + ((category == null) ? 0 : category.hashCode());
 		result = prime * result + ((categoryName == null) ? 0 : categoryName.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		result = prime * result + likes;
 		result = prime * result + ((reviewBody == null) ? 0 : reviewBody.hashCode());
 		result = prime * result + ((reviewDate == null) ? 0 : reviewDate.hashCode());
 		result = prime * result + ((reviewTitle == null) ? 0 : reviewTitle.hashCode());
@@ -127,6 +130,8 @@ public class Review {
 				return false;
 		} else if (!id.equals(other.id))
 			return false;
+		if (likes != other.likes)
+			return false;
 		if (reviewBody == null) {
 			if (other.reviewBody != null)
 				return false;
@@ -154,6 +159,13 @@ public class Review {
 			return false;
 		return true;
 	}
-	
-	
+
+	@Override
+	public String toString() {
+		return "Review [id=" + id + ", reviewTitle=" + reviewTitle + ", bookTitle=" + bookTitle + ", userName="
+				+ userName + ", reviewDate=" + reviewDate + ", category=" + category + ", tags=" + tags
+				+ ", categoryName=" + categoryName + ", reviewBody=" + reviewBody + ", likes=" + likes + "]";
+	}
+
+		
 }
