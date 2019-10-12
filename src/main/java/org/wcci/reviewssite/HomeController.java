@@ -19,8 +19,8 @@ public class HomeController {
 
 	@GetMapping("/")
 	public String singleReview(Model model) {
-		Review review = new Review("First Review with Template", "Gone With The Wind", "James Doe",
-				new Category("Fake Category"), "So good I wanna slap my mama");
+		Review review = new Review("First Review with Template", "Gone With The Template", "Template Doe",
+				new Category("Fake Templategory"), "So template I wanna template my template!");
 		model.addAttribute("review", review);
 		return "review";
 	}
@@ -46,12 +46,21 @@ public class HomeController {
 	}
 
 	@PostMapping("/add")
-	public String addReview1(String reviewTitle, String bookTitle, String userName, String categoryName,
+	public String addReview(String reviewTitle, String bookTitle, String userName, Long categoryId,
 			String reviewBody) {
-		Category category = new Category(categoryName);
-		categoryStorage.addCategory(category);
+		System.out.println(categoryId);
+		Category category = categoryStorage.findCategory(categoryId);
+		System.out.println(categoryId);
 		Review reviewToAdd = new Review(reviewTitle, bookTitle, userName, category, reviewBody);
 		reviewStorage.addReview(reviewToAdd);
+		return "redirect:/all_reviews";
+	}
+	
+	@PostMapping("/like")
+	public String addLike(Long reviewId) {
+		System.out.println("this line is showing something great" + reviewId);
+		Review review = reviewStorage.findReview(reviewId);
+		reviewStorage.addLike(review);
 		return "redirect:/all_reviews";
 	}
 

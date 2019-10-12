@@ -13,7 +13,7 @@
 <body>
     <div class="wrapper">
         <header class="header">
-            <h1 class="header-title">Website title</h1>
+            <h1 class="header-title">Millie's Book Barn</h1>
         </header>
         <section class="navigation-bar">
             <nav> All Posts</nav>
@@ -50,8 +50,8 @@
                     </div>
 
                     <div class="add-review-form__field">
-                        <label for="categoryName" class="add-review-form__field__label">Select category:</label>
-                        <select class="add-review-form__field__dropdown" name="categoryName" id="categoryName">
+                        <label for="categoryId" class="add-review-form__field__label">Select category:</label>
+                        <select class="add-review-form__field__dropdown" name="categoryId" id="categoryId">
                             <option value="">
                             </option>
                             <option th:each="category : ${categories}" th:value="${category.id}"

@@ -19,4 +19,8 @@ public class CategoryStorage {
 	public Iterable<Category> findAllTheCategories(){
 		return categoryRepo.findAllByOrderByCategoryNameAsc();
 	}
+	
+//	public Iterable<Review> findReviewsByCategoryName() {
+//		return categoryRepo.findReviewsByCategoryId();
+//	}
 }

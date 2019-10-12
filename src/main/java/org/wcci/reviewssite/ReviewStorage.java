@@ -19,4 +19,9 @@ public class ReviewStorage {
 	public Iterable<Review> findAllTheReviews() {
 		return reviewRepo.findAllByOrderByIdDesc();
 	}
+	
+	public void addLike(Review reviewToLike) {
+		reviewToLike.setLikes();
+		reviewRepo.save(reviewToLike);
+	}
 }
