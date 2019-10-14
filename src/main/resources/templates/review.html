@@ -14,54 +14,51 @@
     <div class="wrapper">
         <section class="header" th:insert="/sections/header :: header"></section>
         <section class="nav-bar" th:insert="/sections/nav :: nav"></section>
-       
-       <section class="review-container">
 
-        <article class="review-item">
-        
-            <section class="review-item__header">
+        <section class="review-container">
 
-                <h2 class="review-item__header-title" id="reviewTitle" 
-                    th:text="${review.reviewTitle}">ReviewTitle</h2>
+            <article class="review-item">
 
-                <h3 class="review-item__header-book" 
-                	th:text="'Book: '+${review.bookTitle}">BookTitle</h3>
-                	
-                <h3 class="review-item__header-category" 
-                	th:text="'Category: '+${review.categoryName}">ReviewCategory</h3>
-                	
-                <h3 class="review-item__header-review-author" 
-                	th:text="'Reviewer: '+${review.userName}">ReviewAuthor</h3>
-                
-                <!-- If tagList != null -->
+                <section class="review-item__header">
+
+                    <h2 class="review-item__header-title" id="reviewTitle" th:text="${review.reviewTitle}">ReviewTitle
+                    </h2>
+
+                    <h3 class="review-item__header-book" th:text="${review.bookTitle}">BookTitle</h3>
+
+                    <h3 class="review-item__header-category" th:text="${review.categoryName}">Book Category</h3>
+
+                    <h3 class="review-item__header-review-author" th:text="${review.userName}">ReviewAuthor
+                    </h3>
+
+                    <!-- If tagList != null 
                 
                 <h3 class="review-item__header-tag" th:each="tag: ${review.tags}" th:text="'Tags: '+${tag.tagName}">
                     Tag
                 </h3>
-                
+                -->
 
-                <h3 class="review-item__header-date" 
-                th:text="'Date Posted: '+${review.reviewDate}">ReviewDate</h3>
+                    <h3 class="review-item__header-date" th:text="${review.reviewDate}">ReviewDate</h3>
 
-            </section>
-            
-            <div class="review-body">
-                <h3 class="review-item__body" th:text="${review.reviewBody}">
-						ReviewBody
-                </h3>
-            </div>
-            
-            <h3 class="review-item__header-likes" th:text="'Likes: '+${review.likes}">Likes</h3>
-            <form class="review-item__add-like" action="/like" method="POST">
-                <input type="hidden" th:value="*{review.id}" name="reviewId">
-                <input class="review-item__add-like__button primary_action" type="submit" name="addLike"
-                    value="Add Like">
-            </form>
+                </section>
 
-        </article>
-          
+                <div class="review-body">
+                    <h3 class="review-item__body" th:text="${review.reviewBody}">
+                        ReviewBody
+                    </h3>
+                </div>
+
+                <h3 class="review-item__header-likes" th:text="'Likes: '+${review.likes}">Likes</h3>
+                <form class="review-item__add-like" action="/like" method="POST">
+                    <input type="hidden" th:value="*{review.id}" name="reviewId">
+                    <input class="review-item__add-like__button primary_action" type="submit" name="addLike"
+                        value="Add Like">
+                </form>
+
+            </article>
+
         </section>
-             
+
 
         <section class="footer" th:insert="/sections/footer :: footer"></section>
     </div>

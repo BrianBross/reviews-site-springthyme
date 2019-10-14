@@ -25,7 +25,6 @@ public class Review {
 	private Category category;
 	@ManyToMany
 	private List<Tag> tags;
-	private String categoryName;
 	private String reviewBody;
 	private int likes;
 
@@ -36,7 +35,6 @@ public class Review {
 		this.userName = userName;
 		this.category = category;
 		this.reviewBody = reviewBody;
-		this.categoryName = category.getCategoryName();
 		this.tags = Arrays.asList(tags);
 	}
 
@@ -47,7 +45,6 @@ public class Review {
 		this.userName = userName;
 		this.category = category;
 		this.reviewBody = reviewBody;
-		this.categoryName = category.getCategoryName();
 		this.tags = tags;
 	}
 
@@ -65,7 +62,7 @@ public class Review {
 	}
 
 	public String getCategoryName() {
-		return categoryName;
+		return this.category.getCategoryName();
 	}
 
 	public String getUserName() {
@@ -96,13 +93,15 @@ public class Review {
 		return likes;
 	}
 
+	
+	
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((bookTitle == null) ? 0 : bookTitle.hashCode());
 		result = prime * result + ((category == null) ? 0 : category.hashCode());
-		result = prime * result + ((categoryName == null) ? 0 : categoryName.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + likes;
 		result = prime * result + ((reviewBody == null) ? 0 : reviewBody.hashCode());
@@ -131,11 +130,6 @@ public class Review {
 			if (other.category != null)
 				return false;
 		} else if (!category.equals(other.category))
-			return false;
-		if (categoryName == null) {
-			if (other.categoryName != null)
-				return false;
-		} else if (!categoryName.equals(other.categoryName))
 			return false;
 		if (id == null) {
 			if (other.id != null)
@@ -176,7 +170,9 @@ public class Review {
 	public String toString() {
 		return "Review [id=" + id + ", reviewTitle=" + reviewTitle + ", bookTitle=" + bookTitle + ", userName="
 				+ userName + ", reviewDate=" + reviewDate + ", category=" + category + ", tags=" + tags
-				+ ", categoryName=" + categoryName + ", reviewBody=" + reviewBody + ", likes=" + likes + "]";
+				+ ", reviewBody=" + reviewBody + ", likes=" + likes + "]";
 	}
+
+	
 
 }
