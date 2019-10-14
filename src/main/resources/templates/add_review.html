@@ -14,7 +14,7 @@
     <div class="wrapper">
         <section class="header" th:insert="/sections/header :: header"></section>
         <section class="nav-bar" th:insert="/sections/nav :: nav"></section>
-        <section class="review-container">
+        <section class="review-container-add">
 
         <section class="form-container">
             <div class="page-header">
@@ -25,25 +25,24 @@
 
                 <fieldset>
                     <div class="add-review-form__field">
-                        <label for="bookTitle" class="add-review-form__field__label">Book title being reviewed:</label>
+                        <label for="bookTitle" class="add-review-form__field__label">Book Title:</label>
                         <input class="add-review-form__field__input" type="text" id="bookTitle"
                             name="bookTitle"></input>
                     </div>
 
                     <div class="add-review-form__field">
-                        <label for="userName" class="add-review-form__field__label">userName :</label>
+                        <label for="userName" class="add-review-form__field__label"> Your Name:</label>
                         <input class="add-review-form__field__input" type="text" id="userName" name="userName"></input>
                     </div>
 
                     <div class="add-review-form__field">
-                        <label for="reviewTitle" class="add-review-form__field__label">Enter your review title here
-                            :</label>
+                        <label for="reviewTitle" class="add-review-form__field__label"> Review Title:</label>
                         <input class="add-review-form__field__input" type="text" id="reviewTitle"
                             name="reviewTitle"></input>
                     </div>
 
                     <div class="add-review-form__field">
-                        <label for="categoryId" class="add-review-form__field__label">Select category:</label>
+                        <label for="categoryId" class="add-review-form__field__label"> Category:</label>
                         <select class="add-review-form__field__dropdown" name="categoryId" id="categoryId">
                             <option value="">
                             </option>
@@ -54,12 +53,15 @@
                     </div>
 
                     <div class="add-review-form__field">
-                        <label for="reviewBody" class="add-review-form__field__label">Add your review here:</label>
+                        <label for="reviewBody" class="add-review-form__field__label"> Review:</label>
+                    </div>
+                    
+                    <div>
                         <textarea class="add-review-form__field__textarea" id="reviewBody" name="reviewBody"></textarea>
                     </div>
 
                     <div class="add-review-form__field">
-                        <label for="tagList" class="add-review-form__field__label">Select tag(s) to add:</label>
+                        <label for="tagList" class="add-review-form__field__label"> Add Tags:</label>
                         <select multiple size class="add-review-form__field__selectbox" name="tagList" id="tagList">
                             <option th:each="tag : ${tags}" th:value="${tag.id}" th:text="${tag.tagName}">
                             </option>
