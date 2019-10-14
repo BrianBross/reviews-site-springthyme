@@ -12,8 +12,9 @@
 <body>
 
     <div class="wrapper">
-        <section th:insert="/sections/header :: header"></section>
-        <section th:insert="/sections/nav :: nav"></section>
+        <section class="header" th:insert="/sections/header :: header"></section>
+        <section class="nav-bar" th:insert="/sections/nav :: nav"></section>
+        <section class="review-container">
 
         <article class="review-item">
             <section class="review-item__header">
@@ -48,9 +49,9 @@
                 <input class="review-item__add-like__button primary_action" type="submit" name="addLike"
                     value="Add Like">
             </form>
-        </article>
+        </article></section>
 
-        <section th:insert="/sections/footer :: footer"></section>
+        <section class="footer" th:insert="/sections/footer :: footer"></section>
     </div>
 </body>
 
