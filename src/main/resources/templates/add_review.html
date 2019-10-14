@@ -12,16 +12,8 @@
 
 <body>
     <div class="wrapper">
-        <header class="header">
-            <h1 class="header-title">Millie's Book Barn</h1>
-        </header>
-        <section class="navigation-bar">
-            <nav> All Posts</nav>
-            <nav> Create A Post</nav>
-            <nav> View All Tags</nav>
-        </section>
-
-
+        <section th:insert="/sections/header :: header"></section>
+        <section th:insert="/sections/nav :: nav"></section>
 
         <section class="form-container">
             <div class="page-header">
@@ -67,9 +59,8 @@
 
                     <div class="add-review-form__field">
                         <label for="tagList" class="add-review-form__field__label">Select tag(s) to add:</label>
-                        <select multiple size class="add-review-form__field__selectbox" name="tagList" id="tagList">                           
-                            <option th:each="tag : ${tags}" th:value="${tag.id}"
-                                th:text="${tag.tagName}">
+                        <select multiple size class="add-review-form__field__selectbox" name="tagList" id="tagList">
+                            <option th:each="tag : ${tags}" th:value="${tag.id}" th:text="${tag.tagName}">
                             </option>
                         </select>
                     </div>
@@ -84,9 +75,7 @@
 
         </section>
 
-        <footer class="footer">
-
-        </footer>
+        <section th:insert="/sections/footer :: footer"></section>
     </div>
 </body>
 
