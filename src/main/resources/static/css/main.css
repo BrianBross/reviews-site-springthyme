@@ -18,9 +18,7 @@ a {
 a:hover{
   color: black;
 }
-nav {
-  color: whitesmoke;
-}
+
 
 .add-review {
   font-weight: bolder;
@@ -36,7 +34,9 @@ nav {
 
 .header {
   display: flex;
-  grid-area: 1 / 1 / 1 / 3;
+  grid-area: header;
+  /* grid-column-span: 2; */
+  /* grid-area: 1 / 1 / 1 / 3; */
   background-image: url("../images/bookheadimage.jpg");
   justify-content:center;
   align-items: center;
@@ -47,10 +47,10 @@ nav {
   justify-content: center;
   text-align: center;
   background-color: black;
-  font: 80px/1 "Lobster", sans-serif;
+  font: 4rem/1 "Lobster", sans-serif;
   color: white;
   margin: 0.8rem;
-  max-width:35%;
+  max-height: 80%;
   -webkit-animation: color-change 10s infinite;
   -moz-animation: color-change 10s infinite;
   -o-animation: color-change 10s infinite;
@@ -92,9 +92,22 @@ nav {
 }
 
 .footer {
-  background-color: bisque;
+ 
+  grid-area: footer;
   grid-area: 3 / 1 / 4 / 3;
   width: 100%;
+}
+
+.footer__content {
+  background-color: bisque;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.footer__wcci-logo {
+  width:1rem;
+  height:1rem;
 }
 
 .form-container {
@@ -102,12 +115,30 @@ nav {
   width: 100%;
 }
 
-.navigation-bar {
+.nav-bar {
+  padding-left: 1rem;
+  padding-top: 2rem;
+  grid-area: nav;
   grid-area: 2 / 1 / 3 / 1;
   background-color: black;
 }
 
+.nav__content{
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  }
+
+  .nav__content-list-item{
+    margin: .5rem;
+    font-size: 2.2rem;
+    color:burlywood;
+  }
+
+
 .review-container {
+  grid-area: content;
   display: grid;
   grid-gap: 2rem 1rem;
   grid-template-columns: repeat(3, 1fr);
@@ -136,9 +167,10 @@ review-item_header {
 
 .wrapper {
   display: grid;
-  grid-template-columns: 10% 90%;
-  grid-template-rows: 15% auto 5%;
+  grid-template-columns: 10% 1fr;
+  grid-template-rows: 12% 1fr 8%;
   height: 100vh;
   width: 100vw;
+  grid-template-areas: "header header" "nav content" "footer footer";
 }
 
