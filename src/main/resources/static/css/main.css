@@ -35,8 +35,6 @@ a:hover{
 .header {
   display: flex;
   grid-area: header;
-  /* grid-column-span: 2; */
-  /* grid-area: 1 / 1 / 1 / 3; */
   background-image: url("../images/bookheadimage.jpg");
   justify-content:center;
   align-items: center;
@@ -130,12 +128,19 @@ a:hover{
   align-items: flex-start;
   }
 
-  .nav__content-list-item{
+.nav__content-list-item{
     margin: .5rem;
     font-size: 2.2rem;
-    color:burlywood;
   }
+  
+  
+.nav__content-list-item-decoration {
+  color: burlywood;
+}
 
+.nav__content-list-item-decoration:hover {
+  color: white;
+}
 
 .review-container {
   grid-area: content;
@@ -143,6 +148,20 @@ a:hover{
   grid-gap: 2rem 1rem;
   grid-template-columns: repeat(3, 1fr);
   padding: 1rem;
+}
+
+.review-container-add {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-direction: column;
+  padding-left: 20rem;
+  padding-right: 10rem;
+  padding-bottom: 18rem;
+
+
+
 }
 
 review-item_header {
@@ -167,10 +186,10 @@ review-item_header {
 
 .wrapper {
   display: grid;
-  grid-template-columns: 10% 1fr;
+  grid-template-columns: 10% 1fr 10%;
   grid-template-rows: 12% 1fr 8%;
   height: 100vh;
   width: 100vw;
-  grid-template-areas: "header header" "nav content" "footer footer";
+  grid-template-areas: "header header header" "nav content empty" "footer footer footer";
 }
 
