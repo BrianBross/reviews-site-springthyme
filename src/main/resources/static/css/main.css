@@ -36,7 +36,9 @@ nav {
 
 .header {
   display: flex;
-  grid-area: 1 / 1 / 1 / 3;
+  grid-area: header;
+  /* grid-column-span: 2; */
+  /* grid-area: 1 / 1 / 1 / 3; */
   background-image: url("../images/bookheadimage.jpg");
   justify-content:center;
   align-items: center;
@@ -93,6 +95,7 @@ nav {
 
 .footer {
   background-color: bisque;
+  grid-area: footer;
   grid-area: 3 / 1 / 4 / 3;
   width: 100%;
 }
@@ -103,11 +106,13 @@ nav {
 }
 
 .navigation-bar {
+  grid-area: nav;
   grid-area: 2 / 1 / 3 / 1;
   background-color: black;
 }
 
 .review-container {
+  grid-area: content;
   display: grid;
   grid-gap: 2rem 1rem;
   grid-template-columns: repeat(3, 1fr);
@@ -136,9 +141,10 @@ review-item_header {
 
 .wrapper {
   display: grid;
-  grid-template-columns: 10% 90%;
-  grid-template-rows: 15% auto 5%;
+  grid-template-columns: 10% 1fr;
+  grid-template-rows: 12% 1fr 8%;
   height: 100vh;
   width: 100vw;
+  grid-template-areas: "header header" "nav content" "footer footer";
 }
 
