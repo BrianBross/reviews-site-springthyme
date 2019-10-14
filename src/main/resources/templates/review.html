@@ -31,12 +31,11 @@
                     <h3 class="review-item__header-review-author" th:text="${review.userName}">ReviewAuthor
                     </h3>
 
-                    <!-- If tagList != null 
-                
-                <h3 class="review-item__header-tag" th:each="tag: ${review.tags}" th:text="'Tags: '+${tag.tagName}">
-                    Tag
-                </h3>
-                -->
+
+                    <h3 class="review-item__header-tag"  th:each="tag: ${review.tags}">
+                        <div th:text="${tag.tagName}"></div> 
+                        
+                    </h3>
 
                     <h3 class="review-item__header-date" th:text="${review.reviewDate}">ReviewDate</h3>
 

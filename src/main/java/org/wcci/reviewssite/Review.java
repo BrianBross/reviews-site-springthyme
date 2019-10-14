@@ -28,6 +28,14 @@ public class Review {
 	private String reviewBody;
 	private int likes;
 
+	public Category getCategory() {
+		return category;
+	}
+
+	public List<Tag> getTags() {
+		return tags;
+	}
+
 	public Review(String reviewTitle, String bookTitle, String userName, Category category, String reviewBody,
 			Tag... tags) {
 		this.reviewTitle = reviewTitle;
