@@ -69,9 +69,9 @@ public class Review {
 		return bookTitle;
 	}
 
-	public String getCategoryName() {
-		return this.category.getCategoryName();
-	}
+	//public String getCategoryName() {
+		//return this.category.getCategoryName();
+	//}
 
 	public String getUserName() {
 		return userName;
