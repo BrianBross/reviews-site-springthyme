@@ -73,7 +73,6 @@ public class HomeController {
 
 	@PostMapping("/like")
 	public String addLike(Long reviewId) {
-		System.out.println("this line is showing something great" + reviewId);
 		Review review = reviewStorage.findReview(reviewId);
 		reviewStorage.addLike(review);
 		return "redirect:/all_reviews";
