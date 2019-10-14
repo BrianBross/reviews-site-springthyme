@@ -16,21 +16,21 @@ public class Review {
 	@Id
 	@GeneratedValue
 	private Long id;
-	
+
 	private String reviewTitle;
 	private String bookTitle;
 	private String userName;
 	private LocalDate reviewDate = LocalDate.now();
 	@ManyToOne
 	private Category category;
-	@ManyToMany 
+	@ManyToMany
 	private List<Tag> tags;
 	private String categoryName;
 	private String reviewBody;
 	private int likes;
 
-	public Review(String reviewTitle, String bookTitle, String userName, 
-			Category category, String reviewBody, Tag... tags) {
+	public Review(String reviewTitle, String bookTitle, String userName, Category category, String reviewBody,
+			Tag... tags) {
 		this.reviewTitle = reviewTitle;
 		this.bookTitle = bookTitle;
 		this.userName = userName;
@@ -39,47 +39,59 @@ public class Review {
 		this.categoryName = category.getCategoryName();
 		this.tags = Arrays.asList(tags);
 	}
-	
+
+	public Review(String reviewTitle, String bookTitle, String userName, Category category, String reviewBody,
+			List<Tag> tags) {
+		this.reviewTitle = reviewTitle;
+		this.bookTitle = bookTitle;
+		this.userName = userName;
+		this.category = category;
+		this.reviewBody = reviewBody;
+		this.categoryName = category.getCategoryName();
+		this.tags = tags;
+	}
+
 	public void addTagToReview(Tag tagToAdd) {
 		tags.add(tagToAdd);
 	}
 
 	public String getReviewTitle() {
 		return reviewTitle;
-		
+
 	}
+
 	public String getBookTitle() {
 		return bookTitle;
 	}
-	
+
 	public String getCategoryName() {
 		return categoryName;
 	}
-	
+
 	public String getUserName() {
-		return  userName;
+		return userName;
 	}
-	
-	
-	public LocalDate getReviewDate( ) {
+
+	public LocalDate getReviewDate() {
 		return reviewDate;
-		
+
 	}
-	
+
 	public String getReviewBody() {
 		return reviewBody;
 	}
-	
-	public Review() {}
+
+	public Review() {
+	}
 
 	public Long getId() {
 		return id;
 	}
-	
+
 	public void setLikes() {
 		this.likes++;
 	}
-	
+
 	public int getLikes() {
 		return likes;
 	}
@@ -167,5 +179,4 @@ public class Review {
 				+ ", categoryName=" + categoryName + ", reviewBody=" + reviewBody + ", likes=" + likes + "]";
 	}
 
-		
 }

@@ -1,5 +1,8 @@
 package org.wcci.reviewssite;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -46,16 +49,28 @@ public class HomeController {
 	}
 
 	@PostMapping("/add")
-	public String addReview(String reviewTitle, String bookTitle, String userName, Long categoryId,
-			String reviewBody) {
-		System.out.println(categoryId);
+	public String addReview(String reviewTitle, String bookTitle, String userName, Long categoryId, String reviewBody,
+			Long... tagList) {
+
 		Category category = categoryStorage.findCategory(categoryId);
-		System.out.println(categoryId);
-		Review reviewToAdd = new Review(reviewTitle, bookTitle, userName, category, reviewBody);
-		reviewStorage.addReview(reviewToAdd);
+
+		List<Tag> tags = new ArrayList<Tag>();
+
+		if (tagList != null) {
+			for (Long id : tagList) {
+				tags.add(tagStorage.findTag(id));
+			}
+			Review reviewToAdd = new Review(reviewTitle, bookTitle, userName, category, reviewBody, tags);
+			reviewStorage.addReview(reviewToAdd);
+			
+		} else {
+			Review reviewToAdd = new Review(reviewTitle, bookTitle, userName, category, reviewBody);
+			reviewStorage.addReview(reviewToAdd);
+		}
+			
 		return "redirect:/all_reviews";
 	}
-	
+
 	@PostMapping("/like")
 	public String addLike(Long reviewId) {
 		System.out.println("this line is showing something great" + reviewId);
