@@ -20,7 +20,7 @@
             <section class="review-item__header">
 
                 <h2 class="review-item__header-title" id="reviewTitle" 
-                    	th:text="${review.reviewTitle}">ReviewTitle</h2>
+                    th:text="${review.reviewTitle}">ReviewTitle</h2>
 
                 <h3 class="review-item__header-book" 
                 	th:text="'Book: '+${review.bookTitle}">BookTitle</h3>
@@ -31,11 +31,12 @@
                 <h3 class="review-item__header-review-author" 
                 	th:text="'Reviewer: '+${review.userName}">ReviewAuthor</h3>
                 
-                <!-- If tagList != null
-                <section th:each="tag : ${tags}" {
-                <h4 class="review-item__header-tag" 
-                	th:text="${tag.tagName}">tag1</h4>
-                } -->
+                <!-- If tagList != null -->
+                
+                <h3 class="review-item__header-tag" th:each="tag: ${review.tags}" th:text="'Tags: '+${tag.tagName}">
+                    Tag
+                </h3>
+                
 
                 <h3 class="review-item__header-date" 
                 th:text="'Date Posted: '+${review.reviewDate}">ReviewDate</h3>
