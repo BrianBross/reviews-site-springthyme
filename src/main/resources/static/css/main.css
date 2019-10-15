@@ -192,6 +192,29 @@ a:hover{
 
 }
 
+
+.welcome-page {
+  position: relative;
+  overflow: hidden;
+  grid-column: 1 / span 3;
+  padding: 0;
+}
+
+.welcome-page__welcome-header {
+  padding: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.welcome-page__millies-pretty-face {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: auto;
+  opacity: 0.6;
+}
+
 .wrapper {
   display: grid;
   grid-template-columns: 10% 1fr 10%;
