@@ -65,6 +65,10 @@
                     </div>
 
                     <div class="add-review-form__field">
+                        <label class="add-review-form__field__instructions"> (Control + Left Click to add more than one tag)</label>
+                    </div>
+
+                    <div class="add-review-form__field">
                     <select multiple size class="add-review-form__field__selectbox" name="tagList" id="tagList">
                         <option th:each="tag : ${tags}" th:value="${tag.id}" th:text="${tag.tagName}">
                         </option>
@@ -72,8 +76,9 @@
                     </div>
 
                     <div class="add-review-form__field">
-                        <input class="add-review-form__field__button primary_action" type="submit" name="submit"
-                            value="Submit Review">
+                        <button class="add-review-form__field__button primary_action" type="submit" name="submit"
+                            value="Submit Review"> Submit
+                        </button>
                     </div>
 
                 </fieldset>
