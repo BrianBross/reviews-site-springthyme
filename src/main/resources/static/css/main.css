@@ -185,25 +185,23 @@ review-item_header {
 }
 
 .welcome-page {
-  position: relative;
-  overflow: hidden;
-  grid-column: 1 / span 3;
+  display: grid;
+  grid-template-columns: 50% 50%;
   padding: 0;
+  background-image: url("/images/Millie.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
 }
 
 .welcome-page__welcome-header {
-  padding: 2rem;
+  padding: 1rem;
+  grid-column-start: 1;
+  grid-column-end: 2;
   position: relative;
   z-index: 2;
-}
-
-.welcome-page__millies-pretty-face {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: auto;
-  opacity: 0.6;
+  font: 3rem/1 "Lobster", sans-serif;
+  color: rgb(221, 62, 187);
+  margin: 0.8rem;
 }
 
 .wrapper {
