@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Lobster&display=swap');
+
+@import url('https://fonts.googleapis.com/css?family=Merriweather|Montserrat&display=swap');
+
 *
 {
     box-sizing: border-box;
@@ -19,6 +22,10 @@ a:hover{
   color: black;
 }
 
+textarea {
+  font-family: 'Merriweather', serif;
+  font-size: 20px;
+}
 
 .add-review {
   font-weight: bolder;
@@ -32,12 +39,20 @@ a:hover{
   padding: .5rem 1rem;
 }
 
+.add-review-form__field__label {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bolder;
+}
+
+.add-review-form__field__input {
+font-family: 'Merriweather', serif;
+}
+
 .add-review-form__field__textarea {
   display: inline-block;
   border: solid 1px #000;
   min-height: 200px;
   width: 800px;
-  
 }
 
 .add-review-form__field__selectbox {
