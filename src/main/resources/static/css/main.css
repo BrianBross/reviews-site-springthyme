@@ -23,14 +23,22 @@ a:hover{
 .add-review {
   font-weight: bolder;
 }
-
 .add-review-form {
   display: flex;
   flex-direction: column;
 }
 
 .add-review-form__field {
-  padding-bottom: 1rem;
+  padding: .5rem 1rem;
+}
+
+.add-review-form__field__textarea {
+  display: inline-block;
+  border: solid 1px #000;
+  min-height: 200px;
+  width: 800px;
+  resize: none;
+  
 }
 
 .header {
@@ -134,6 +142,7 @@ a:hover{
     font-size: 2.2rem;
   }
   
+  
 .nav__content-list-item-decoration {
   color: burlywood;
 }
@@ -177,32 +186,12 @@ review-item_header {
   flex-direction: column;
   padding: 0.5rem;
 }
-
 .review-item_body {
   font-size: 1.5rem;
 
 
 }
 
-.welcome-page {
-  position: relative;
-  overflow: hidden;
-}
-
-.welcome-page__welcome-header {
-  padding: 2rem;
-  position: relative;
-  z-index: 2;
-}
-
-.welcome-page__millies-pretty-face {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: auto;
-  opacity: 0.6;
-}
 
 .wrapper {
   display: grid;

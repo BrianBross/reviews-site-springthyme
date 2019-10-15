@@ -56,16 +56,19 @@
                         <label for="reviewBody" class="add-review-form__field__label"> Review:</label>
                     </div>
                     
-                    <div>
+                    <div class="add-review-form__field" contentEditable="true">
                         <textarea class="add-review-form__field__textarea" id="reviewBody" name="reviewBody"></textarea>
                     </div>
 
                     <div class="add-review-form__field">
                         <label for="tagList" class="add-review-form__field__label"> Add Tags:</label>
-                        <select multiple size class="add-review-form__field__selectbox" name="tagList" id="tagList">
-                            <option th:each="tag : ${tags}" th:value="${tag.id}" th:text="${tag.tagName}">
-                            </option>
-                        </select>
+                    </div>
+
+                    <div class="add-review-form__field">
+                    <select multiple size class="add-review-form__field__selectbox" name="tagList" id="tagList">
+                        <option th:each="tag : ${tags}" th:value="${tag.id}" th:text="${tag.tagName}">
+                        </option>
+                    </select>
                     </div>
 
                     <div class="add-review-form__field">
