@@ -188,6 +188,7 @@ review-item_header {
   position: relative;
   overflow: hidden;
   grid-column: 1 / span 3;
+  padding: 0;
 }
 
 .welcome-page__welcome-header {
