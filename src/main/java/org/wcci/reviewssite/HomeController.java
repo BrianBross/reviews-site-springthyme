@@ -45,6 +45,17 @@ public class HomeController {
 		model.addAttribute("review", review);
 		return "review";
 	}
+	
+	@GetMapping("/reviews/all_reviews")
+	public String navRedirect() {
+		return "redirect:/all_reviews";
+	}
+	
+	@GetMapping("/reviews/add_review")
+	public String navRedirect2() {
+		return "redirect:/add_review";
+	}
+	
 
 	@PostMapping("/add")
 	public String addReview(String reviewTitle, String bookTitle, String userName, Long categoryId, String reviewBody,
