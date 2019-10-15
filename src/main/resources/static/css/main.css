@@ -37,8 +37,12 @@ a:hover{
   border: solid 1px #000;
   min-height: 200px;
   width: 800px;
-  resize: none;
   
+}
+
+.add-review-form__field__selectbox {
+  min-height: 180px;
+  width: 300px;
 }
 
 .header {
@@ -173,10 +177,6 @@ a:hover{
 
 }
 
-review-item_header {
-  color: red;
-}
-
 .review-item {
   align-items: flex-start;
   border: 1px black solid;
@@ -191,7 +191,6 @@ review-item_header {
 
 
 }
-
 
 .wrapper {
   display: grid;
