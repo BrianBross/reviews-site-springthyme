@@ -186,7 +186,7 @@ review-item_header {
 
 .welcome-page {
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 60% 40%;
   padding: 0;
   background-image: url("/images/Millie.jpg");
   background-repeat: no-repeat;
@@ -200,8 +200,9 @@ review-item_header {
   position: relative;
   z-index: 2;
   font: 3rem/1 "Lobster", sans-serif;
-  color: rgb(221, 62, 187);
-  margin: 0.8rem;
+  color: darkblue;
+  margin-top: 1.5rem;
+  margin-left: 1.5rem;
 }
 
 .wrapper {
