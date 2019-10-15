@@ -21,11 +21,9 @@ public class HomeController {
 	private TagStorage tagStorage;
 
 	@GetMapping("/")
-	public String singleReview(Model model) {
-		Review review = new Review("First Review with Template", "Gone With The Template", "Template Doe",
-				new Category("Fake Templategory"), "So template I wanna template my template!");
-		model.addAttribute("review", review);
-		return "review";
+	public String welcomePage(Model model) {
+		
+		return "index";
 	}
 
 	@GetMapping("/all_reviews")
