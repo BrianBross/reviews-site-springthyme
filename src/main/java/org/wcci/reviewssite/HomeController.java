@@ -93,27 +93,11 @@ public class HomeController {
 	
 	@PostMapping("/search")
 	public String searchAllReviews(String searchData, Model model) {
-				
-		System.out.println("We are in the beginning of the controller post mapping now.");
-				
-		List<Review> returnedReviews = (List<Review>) reviewStorage.performReviewTitleSearch(searchData);
-		
-		for (Review review : returnedReviews) {
-			System.out.println("Controller: " + review.getReviewTitle());
-		}
-		
-		model.addAttribute("reviews", reviewStorage.performReviewTitleSearch(searchData));
-		
-		System.out.println("We are right before the return of the controller post mapping now.");
-		
+		model.addAttribute("reviews", reviewStorage.searchByReviewTitle(searchData));
+//		model.addAttribute("reviews", reviewStorage.searchByBookTitle(searchData));
+//		model.addAttribute("reviews", reviewStorage.searchByUserName(searchData));
+//		model.addAttribute("reviews", reviewStorage.searchByReviewBody(searchData));
 		return "reviews";
 	}
 	
-//	@GetMapping("/reviews/{id}")
-//	public String singleReview(@PathVariable Long id, Model model) {
-//		Review review = reviewStorage.findReview(id);
-//		model.addAttribute("review", review);
-//		return "review";
-//	}
-
 }

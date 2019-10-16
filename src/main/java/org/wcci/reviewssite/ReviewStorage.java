@@ -27,17 +27,20 @@ public class ReviewStorage {
 		return reviewRepo.findAllByOrderByIdDesc();
 	}
 
-	public Iterable<Review> performReviewTitleSearch(String searchData) {
-
-		System.out.println("We are in the storage method now.");
-		
-		List<Review> returnedReviews = (List<Review>) reviewRepo.findByReviewTitleContains(searchData);
-
-		for (Review review : returnedReviews) {
-			System.out.println("Storage: " + review.getReviewTitle());
-		}
-
-		return reviewRepo.findByReviewTitleContains(searchData);
+	public Iterable<Review> searchByReviewTitle(String searchData) {
+		return reviewRepo.findByReviewTitleContainsIgnoreCase(searchData);
+	}
+	
+	public Iterable<Review> searchByBookTitle(String searchData) {
+		return reviewRepo.findByBookTitleContainsIgnoreCase(searchData);
+	}
+	
+	public Iterable<Review> searchByUserName(String searchData) {
+		return reviewRepo.findByUserNameContainsIgnoreCase(searchData);
+	}
+	
+	public Iterable<Review> searchByReviewBody(String searchData) {
+		return reviewRepo.findByReviewBodyContainsIgnoreCase(searchData);
 	}
 
 }
