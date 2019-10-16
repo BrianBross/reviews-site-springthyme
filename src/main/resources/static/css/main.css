@@ -218,6 +218,14 @@ font-family: 'Merriweather', serif;
   color: white;
 }
 
+.nav__hr-line {
+  background-color: red;
+  border-radius: 25%rem;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  padding: .5rem;  
+}
+
 .review-container {
   grid-area: content;
   display: grid;
@@ -287,8 +295,17 @@ font-family: 'Merriweather', serif;
   grid-template-areas: "header header header" "nav content empty" "footer footer footer";
 }
 
-#search_textbox {
+#search-textbox {
   font-family: 'Merriweather', serif;
-  margin-right: .5rem;
-  padding: 1rem 2rem;
+  margin-bottom: .5rem;
+  margin-top: .5rem;
+  padding: .5rem .5rem;
+  max-height: 2rem;
+  max-width: 80%;
+}
+
+#search-button {
+  background: blanchedalmond;
+  color: burlywood;
+  padding: .5rem .5rem;
 }
