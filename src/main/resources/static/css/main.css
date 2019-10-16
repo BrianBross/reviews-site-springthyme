@@ -64,6 +64,7 @@ option {
   font-weight: bolder;
   font-family: "Lobster", sans-serif;
 }
+
 .add-review-form {
   display: flex;
   flex-direction: column;
@@ -75,13 +76,15 @@ option {
 }
 
 .add-review-form__field__label {
-  font-family: 'Montserrat', sans-serif;
+  /* font-family: 'Montserrat', sans-serif; */
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-weight: bolder;
 }
 
 .add-review-form__field__input {
 font-family: 'Merriweather', serif;
 }
+
 .add-review-form__field__instructions {
   font-family: 'Merriweather', serif;
   font-size: 10px;
@@ -186,6 +189,12 @@ font-family: 'Merriweather', serif;
 .form-container {
   grid-area: 2 / 2 / 2 / 2;
   width: 100%;
+
+  
+  padding-top: 3rem;
+  padding-right: 4rem;
+  padding-bottom: 3rem;
+  padding-left: 4rem;
 }
 
 .nav-bar {
@@ -247,14 +256,18 @@ font-family: 'Merriweather', serif;
 
 .review-container-add {
   display: flex;
+  /* align-items: center;
+  justify-content: center; */
+
   align-items: center;
   justify-content: center;
 
   flex-direction: column;
-  padding-left: 20rem;
-  padding-right: 10rem;
-  padding-bottom: 18rem;
-  padding-top: 3rem;
+  /* padding-left: 20rem; */
+  padding-top: 0;
+  padding-left: 0;
+  /* padding-right: 10rem;
+  padding-bottom: 18rem; */
 }
 
 .review-item {
