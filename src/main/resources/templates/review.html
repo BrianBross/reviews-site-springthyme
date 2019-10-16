@@ -15,20 +15,20 @@
         <section class="header" th:insert="/sections/header :: header"></section>
         <section class="nav-bar" th:insert="/sections/nav :: nav"></section>
 
-        <section class="review-container">
+        <section class="review-container-single">
 
-            <article class="review-item">
+            <article class="review-item-box">
 
                 <section class="review-item__header">
 
-                    <h2 class="review-item__header-title" id="reviewTitle" th:text="${review.reviewTitle}">ReviewTitle
+                    <h2 class="review-item__header-title-single" id="reviewTitle" th:text="${review.reviewTitle}">ReviewTitle
                     </h2>
 
                     <h3 class="review-item__header-book" th:text="${review.bookTitle}">BookTitle</h3>
 
                     <h3 class="review-item__header-category" th:text="${review.category.categoryName}">Book Category</h3>
 
-                    <h3 class="review-item__header-review-author" th:text="${review.userName}">ReviewAuthor
+                    <h5>As reviewed by: </h5><h3 class="review-item__header-review-author" th:text="${review.userName}">ReviewAuthor
                     </h3>
 
 
