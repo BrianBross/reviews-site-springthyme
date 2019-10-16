@@ -30,7 +30,7 @@ button {
   text-decoration: none;
   background: black;
   color: wheat;
-  font-family: sans-serif;
+  font-family: 'Merriweather', serif;
   font-size: 1rem;
   cursor: pointer;
   text-align: center;
@@ -287,3 +287,8 @@ font-family: 'Merriweather', serif;
   grid-template-areas: "header header header" "nav content empty" "footer footer footer";
 }
 
+#search_textbox {
+  font-family: 'Merriweather', serif;
+  margin-right: .5rem;
+  padding: 1rem 2rem;
+}
