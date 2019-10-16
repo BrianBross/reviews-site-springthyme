@@ -22,7 +22,6 @@ public class HomeController {
 
 	@GetMapping("/")
 	public String welcomePage(Model model) {
-		
 		return "index";
 	}
 
@@ -64,6 +63,8 @@ public class HomeController {
 		Category category = categoryStorage.findCategory(categoryId);
 
 		List<Tag> tags = new ArrayList<Tag>();
+		
+		Long reviewId;
 
 		if (tagList != null) {
 			for (Long id : tagList) {
@@ -71,20 +72,21 @@ public class HomeController {
 			}
 			Review reviewToAdd = new Review(reviewTitle, bookTitle, userName, category, reviewBody, tags);
 			reviewStorage.addReview(reviewToAdd);
+			reviewId = reviewToAdd.getId();
 			
 		} else {
 			Review reviewToAdd = new Review(reviewTitle, bookTitle, userName, category, reviewBody);
 			reviewStorage.addReview(reviewToAdd);
+			reviewId = reviewToAdd.getId();
 		}
-			
-		return "redirect:/all_reviews";
+		return "redirect:/reviews/" + reviewId;
 	}
 
 	@PostMapping("/like")
 	public String addLike(Long reviewId) {
 		Review review = reviewStorage.findReview(reviewId);
-		reviewStorage.addLike(review);
-		return "redirect:/all_reviews";
+		reviewStorage.addLike(review);	
+		return "redirect:/reviews/" + reviewId;
 	}
 
 }
