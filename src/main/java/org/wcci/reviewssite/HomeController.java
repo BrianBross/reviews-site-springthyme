@@ -1,6 +1,7 @@
 package org.wcci.reviewssite;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,17 +46,18 @@ public class HomeController {
 		return "review";
 	}
 	
+	
+
 	@GetMapping("/reviews/all_reviews")
 	public String navRedirect() {
 		return "redirect:/all_reviews";
 	}
-	
+
 	@GetMapping("/reviews/add_review")
 	public String navRedirect2() {
 		return "redirect:/add_review";
 	}
 	
-
 	@PostMapping("/add")
 	public String addReview(String reviewTitle, String bookTitle, String userName, Long categoryId, String reviewBody,
 			Long... tagList) {
@@ -63,7 +65,7 @@ public class HomeController {
 		Category category = categoryStorage.findCategory(categoryId);
 
 		List<Tag> tags = new ArrayList<Tag>();
-		
+
 		Long reviewId;
 
 		if (tagList != null) {
@@ -73,7 +75,7 @@ public class HomeController {
 			Review reviewToAdd = new Review(reviewTitle, bookTitle, userName, category, reviewBody, tags);
 			reviewStorage.addReview(reviewToAdd);
 			reviewId = reviewToAdd.getId();
-			
+
 		} else {
 			Review reviewToAdd = new Review(reviewTitle, bookTitle, userName, category, reviewBody);
 			reviewStorage.addReview(reviewToAdd);
@@ -85,8 +87,17 @@ public class HomeController {
 	@PostMapping("/like")
 	public String addLike(Long reviewId) {
 		Review review = reviewStorage.findReview(reviewId);
-		reviewStorage.addLike(review);	
+		reviewStorage.addLike(review);
 		return "redirect:/reviews/" + reviewId;
 	}
-
+	
+	@PostMapping("/search")
+	public String searchAllReviews(String searchData, Model model) {
+		model.addAttribute("reviews", reviewStorage.searchByReviewTitle(searchData));
+//		model.addAttribute("reviews", reviewStorage.searchByBookTitle(searchData));
+//		model.addAttribute("reviews", reviewStorage.searchByUserName(searchData));
+//		model.addAttribute("reviews", reviewStorage.searchByReviewBody(searchData));
+		return "reviews";
+	}
+	
 }
