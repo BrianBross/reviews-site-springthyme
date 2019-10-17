@@ -1,7 +1,6 @@
 package org.wcci.reviewssite;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -92,11 +91,33 @@ public class HomeController {
 	}
 	
 	@PostMapping("/search")
-	public String searchAllReviews(String searchData, Model model) {
-		model.addAttribute("reviews", reviewStorage.searchByReviewTitle(searchData));
-//		model.addAttribute("reviews", reviewStorage.searchByBookTitle(searchData));
-//		model.addAttribute("reviews", reviewStorage.searchByUserName(searchData));
-//		model.addAttribute("reviews", reviewStorage.searchByReviewBody(searchData));
+	public String searchAllReviews(String searchField, String searchData, Model model) {
+		
+        switch (searchField) { 
+        case "reviewTitle": 
+            model.addAttribute("reviews", reviewStorage.searchByReviewTitle(searchData));
+            break; 
+        case "bookTitle": 
+            model.addAttribute("reviews", reviewStorage.searchByBookTitle(searchData));
+            break; 
+        case "userName": 
+            model.addAttribute("reviews", reviewStorage.searchByUserName(searchData));
+            break; 
+        case "reviewBody": 
+            model.addAttribute("reviews", reviewStorage.searchByReviewBody(searchData));
+            break;   
+//        case "category": 
+//            model.addAttribute("reviews", reviewStorage.searchByCategory(searchData));
+//            break; 
+//        case "tags": 
+//            model.addAttribute("reviews", reviewStorage.searchByTags(searchData));
+//            break; 
+        default:
+             model.addAttribute("message", "Search returned no results.  All reviews are displayed.");
+             model.addAttribute("reviews", reviewStorage.findAllTheReviews());
+             break; 
+        }
+		
 		return "reviews";
 	}
 	

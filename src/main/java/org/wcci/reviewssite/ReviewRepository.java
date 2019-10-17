@@ -11,4 +11,6 @@ public interface ReviewRepository extends CrudRepository<Review, Long> {
 	public Iterable<Review> findByBookTitleContainsIgnoreCase(String searchData);
 	public Iterable<Review> findByUserNameContainsIgnoreCase(String searchData);
 	public Iterable<Review> findByReviewBodyContainsIgnoreCase(String searchData);
+//	public Iterable<Review> findByReviewCategoryNameContainsIgnoreCase(String searchData);
+//	public Iterable<Review> findByReviewBodyContainsIgnoreCase(String searchData);
 }
