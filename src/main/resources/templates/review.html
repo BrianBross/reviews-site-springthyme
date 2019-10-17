@@ -32,27 +32,29 @@
                     </h3>
 
 
-                    <h3 class="review-item__header-tag"  th:each="tag: ${review.tags}">
-                        <div th:text="${tag.tagName}"></div> 
-                        
-                    </h3>
-
+                    
                     <h3 class="review-item__header-date" th:text="${review.reviewDate}">ReviewDate</h3>
-
+                    
                 </section>
-
+                
                 <div class="review-body">
-                    <h3 class="review-item__body" th:text="${review.reviewBody}">
+                    <p class="review-item__body" th:text="${review.reviewBody}">
                         ReviewBody
-                    </h3>
+                    </p>
                 </div>
-
+                
                 <h3 class="review-item__header-likes" th:text="'Likes: '+${review.likes}">Likes</h3>
                 <form class="review-item__add-like" action="/like" method="POST">
                     <input type="hidden" th:value="*{review.id}" name="reviewId">
                     <input class="review-item__add-like__button primary_action" type="submit" name="addLike"
-                        value="Add Like">
+                    value="Add Like">
                 </form>
+
+                <div class="review-tag">
+                <h3 class="review-item__header-tag"  th:each="tag: ${review.tags}">
+                    <div th:text="${tag.tagName}"></div> 
+                </h3>
+                </div>
 
             </article>
 

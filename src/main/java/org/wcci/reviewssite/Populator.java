@@ -73,8 +73,8 @@ public class Populator implements CommandLineRunner {
 				category6, "Loved it!!!");
 		Review review7 = new Review("Seventh Review", "Thirteen: Officially a Teen", "Dinah Teeneger", 
 				category7,"My parents need to read this!!!");
-		Review review8 = new Review("Eighth Review", "Help for the Aspiring Coder", "Elon Tusk", 
-				category8, "Hate It!!!");
+		Review review8 = new Review("I almost sold my seaside property", "Big Whale: Chapter 3 Return of the Whale", "Elon Musk", 
+				category8, "I hid in my Tesla for weeks after finishing this book.");
 
 		reviewStorage.addReview(review1);
 		reviewStorage.addReview(review2);
