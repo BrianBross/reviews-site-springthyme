@@ -11,8 +11,10 @@
     <hr>
 
     <div class="navdiv2">
+        <h6>Key Word Search, by field</h6>
         <form action="/search" method="POST">
             <fieldset>
+                <input type="text" name="searchData" id="search-textbox"></input>
                 <select class="search-by-dropdown" name="searchField" id="search-by-dropdown">
                     <option value="nada">Select One</option>
                     <option value="reviewTitle">Review Title</option>
@@ -22,7 +24,6 @@
                     <option value="tags">Review Tags</option>
                     <option value="reviewBody">Review Content</option>
                 </select>
-                <input type="text" name="searchData" id="search-textbox"></input>
                 <button name="submit" id="search-button" value="Submit Review"> Search </button>
             </fieldset>
         </form>
