@@ -1,17 +1,29 @@
 <nav>
-    <ul class="nav__content">
-        <li class="nav__content-list-item"> <a class="nav__content-list-item-decoration" href="all_reviews">All
-                Posts</a></li>
-        <li class="nav__content-list-item"><a class="nav__content-list-item-decoration" href="add_review">Create
-                Review</a></li>
-    </ul>
+    <div class="navdiv1">
+        <ul class="nav__content">
+            <li class="nav__content-list-item"> <a class="nav__content-list-item-decoration" href="all_reviews">All
+                    Posts</a></li>
+            <li class="nav__content-list-item"><a class="nav__content-list-item-decoration" href="add_review">Create
+                    Review</a></li>
+        </ul>
+    </div>
 
-    <div class="nav__hr-line"></div>
+    <hr>
 
-    <form action="/search" method="POST">
-        <fieldset>
-            <input type="text" name="searchData" id="search-textbox"></input>
-            <button name="submit" id="search-button" value="Submit Review"> Search </button>
-        </fieldset>
-    </form>
+    <div class="navdiv2">
+        <form action="/search" method="POST">
+            <fieldset>
+                <select class="search-by-dropdown" name="search-by-dropdown" id="search-by-dropdown">
+                    <option value="nada">Select One</option>
+                    <option value="reviewTitle">Review Title</option>
+                    <option value="bookTitle">Book Title</option>
+                    <option value="userName">User Name</option>
+                    <option value="catergory">Book Category</option>
+                    <option value="tags">Review Tags</option>
+                </select>
+                <input type="text" name="searchData" id="search-textbox"></input>
+                <button name="submit" id="search-button" value="Submit Review"> Search </button>
+            </fieldset>
+        </form>
+    </div>
 </nav>
