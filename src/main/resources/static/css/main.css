@@ -280,11 +280,14 @@ padding: .5rem;
   padding: 1rem;
 }
 .review-container-single{
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  grid-area: 2 / 2 / 2 / 2;
+  width: 100%;
 
-  flex-direction: column;
+  
+  padding-top: 3rem;
+  padding-right: 30rem;
+  padding-bottom: 3rem;
+  padding-left: 18rem;
 
 }
 
@@ -327,19 +330,29 @@ padding: .5rem;
   min-width:  600px;
 }
 
+.review-body {
+  display: inline-block;
+  border: 1px solid #000;
+  max-width: 800px;
+  min-width: 750px;
+  min-height: 400px;
+}
+
+.review-tag {
+  font:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  padding: 1rem 0rem;
+  font-size: 18px;
+}
 
 .review-item__body {
-    display: inline-block;
-    border: 1px solid #000;
-    max-width: 800px;
-    min-width: 750px;
-    min-height: 400px;
+  font: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 18px;
 }
 
-.review-item__header-date{
-  display: flex;
-  justify-content: flex-end;
+.review-item__header {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+
 .review-item__header-title-single{
   text-align: center;
   font-size: 3rem;
