@@ -67,13 +67,41 @@ public class Populator implements CommandLineRunner {
 				category3,"Read at least once every 5 years!");
 		Review review4 = new Review("Pleasing to the Soul", "Dragon: Bruce Lee", "Charles Smith", 
 				category4, "Left me Kicking!!!");
-		Review review5 = new Review("Don't Even", "To Kill a Mockingbird", "Tom Robison", 
+
+		Review review5 = new Review("Fifth Review", "This Changes Everything", "Mary D.", 
+				category5,"Very frightening, but hopeful, too!");
+		Review review6 = new Review("Sixth Review", "A Wrinkle in Time", "Polly Posey", 
+				category6, "Loved it!!!");
+		Review review7 = new Review("Seventh Review", "Thirteen: Officially a Teen", "Dinah Teeneger", 
+				category7,"My parents need to read this!!!");
+		Review review8 = new Review("Eighth Review", "Help for the Aspiring Coder", "Elon Tusk", 
+				category8, "Hate It!!!");
+		
+		Review review9 = new Review("Ninth Review", "Pride and Prejudice and Zombies", 
+				"Mary Shelley", category1,"Lizzie Bennett as you've never seen her before!");
+		Review review10 = new Review("Tenth Review", "Day the earth stood still", "Polly Posey", 
+				category2, "Loved it!!!");
+		Review review11 = new Review("Eleventh Review", "Teen Wolves: Officially a Teen", "Boris Karloff", 
+				category7,"A Howling Read!!!");
+		Review review12 = new Review("Twelfth Review", "CSS for the chronically insane", "Elon Tusk", 
+				category4, "Loved It!!!");
+
+		Review review13 = new Review("Ninth Review", "Pride and Prejudice and Zombies", 
+				"Mary Shelley", category1,"Lizzie Bennett as you've never seen her before!");
+		Review review14 = new Review("Tenth Review", "Day the earth stood still", "Polly Posey", 
+				category2, "Loved it!!!");
+		Review review15 = new Review("Eleventh Review", "Teen Wolves: Officially a Teen", "Boris Karloff", 
+				category7,"A Howling Read!!!");
+		Review review16 = new Review("Twelfth Review", "CSS for the chronically insane", "Elon Tusk", 
+				category4, "Loved It!!!");
+
+		Review review17 = new Review("Don't Even", "To Kill a Mockingbird", "Tom Robison", 
 				category5,"Takes a turn for the worst.");
-		Review review6 = new Review("Boring", "Steve Jobs by Walter Isaacson", "Bill Gates", 
-				category6, "Do I have to say more?");
-		Review review7 = new Review("Abosolute Masterpiece", "What's That Smell? pt. 2", "Kesha", 
+		Review review18 = new Review("Boring", "Steve Jobs by Walter Isaacson", "Bill Gates", 
+				category1, "Do I have to say more?");
+		Review review19 = new Review("Abosolute Masterpiece", "What's That Smell? pt. 2", "Kesha", 
 				category7,"It really had me thinking... where is that god awful smell coming from? After further inner reflection I realized maybe it's me? Either way I can't wait for part 3! ");
-		Review review8 = new Review("I almost sold my seaside property", "Big Whale: Chapter 3 Return of the Whale", "Elon Musk", 
+		Review review20 = new Review("I almost sold my seaside property", "Big Whale: Chapter 3 Return of the Whale", "Elon Musk", 
 				category8, "I hid in my Tesla for weeks after finishing this book.");
 
 		reviewStorage.addReview(review1);
@@ -84,8 +112,16 @@ public class Populator implements CommandLineRunner {
 		reviewStorage.addReview(review6);
 		reviewStorage.addReview(review7);
 		reviewStorage.addReview(review8);		
+		reviewStorage.addReview(review9);
+		reviewStorage.addReview(review10);
+		reviewStorage.addReview(review11);
+		reviewStorage.addReview(review12);	
 		
-
+		reviewStorage.addReview(review13);
+		reviewStorage.addReview(review14);
+		reviewStorage.addReview(review15);
+		reviewStorage.addReview(review16);		
+		
 	}
 	
 	
