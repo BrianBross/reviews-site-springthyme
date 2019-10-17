@@ -18,14 +18,14 @@ public class Populator implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		
 		
-		Category category1 = new Category("Horror");
+		Category category1 = new Category("Self-Help");
 		Category category2 = new Category("Comedy");
-		Category category3 = new Category("Fiction");
-		Category category4 = new Category("Biography");
-		Category category5 = new Category("NonFiction");
-		Category category6 = new Category("Children");
+		Category category3 = new Category("NonFiction");
+		Category category4 = new Category("Children");
+		Category category5 = new Category("Fiction");
+		Category category6 = new Category("Biography");
 		Category category7 = new Category("Teen");
-		Category category8 = new Category("Self-Help");
+		Category category8 = new Category("Horror");
 		
 		Tag tag1 = new Tag("page turner");
 		Tag tag2 = new Tag("exhilirating");
@@ -59,20 +59,20 @@ public class Populator implements CommandLineRunner {
 		tagStorage.addTag(tag10);
 		
 		
-		Review review1 = new Review("First Review", "The Birds", "Jimmy Roe", 
+		Review review1 = new Review("Chirp Chirp", "The Birds", "Jimmy Roe", 
 				category1,"Scared me so much!");
-		Review review2 = new Review("Second Review", "I Hope They Serve Beer in Hell", "Brian B.", 
+		Review review2 = new Review("My Favorite Book", "I Hope They Serve Beer in Hell", "Brian B.", 
 				category2, "Reee-diculous!!!");
-		Review review3 = new Review("Third Review", "Jane Eyre", "Barbara Taylor", 
+		Review review3 = new Review("Always Evolving", "Jane Eyre", "Barbara Taylor", 
 				category3,"Read at least once every 5 years!");
-		Review review4 = new Review("Fourth Review", "Dragon: Bruce Lee", "Charles Smith", 
+		Review review4 = new Review("Pleasing to the Soul", "Dragon: Bruce Lee", "Charles Smith", 
 				category4, "Left me Kicking!!!");
-		Review review5 = new Review("Fifth Review", "This Changes Everything", "Mary D.", 
-				category5,"Very frightening, but hopeful, too!");
-		Review review6 = new Review("Sixth Review", "A Wrinkle in Time", "Polly Posey", 
-				category6, "Loved it!!!");
-		Review review7 = new Review("Seventh Review", "Thirteen: Officially a Teen", "Dinah Teeneger", 
-				category7,"My parents need to read this!!!");
+		Review review5 = new Review("Don't Even", "To Kill a Mockingbird", "Tom Robison", 
+				category5,"Takes a turn for the worst.");
+		Review review6 = new Review("Boring", "Steve Jobs by Walter Isaacson", "Bill Gates", 
+				category6, "Do I have to say more?");
+		Review review7 = new Review("Abosolute Masterpiece", "What's That Smell? pt. 2", "Kesha", 
+				category7,"It really had me thinking... where is that god awful smell coming from? After further inner reflection I realized maybe it's me? Either way I can't wait for part 3! ");
 		Review review8 = new Review("I almost sold my seaside property", "Big Whale: Chapter 3 Return of the Whale", "Elon Musk", 
 				category8, "I hid in my Tesla for weeks after finishing this book.");
 
