@@ -11,19 +11,24 @@
     <hr>
 
     <div class="navdiv2">
+        <div class="key-word-search">Key Word Search, by field</div>
         <form action="/search" method="POST">
             <fieldset>
-                <select class="search-by-dropdown" name="search-by-dropdown" id="search-by-dropdown">
+                <input type="text" name="searchData" id="search-textbox"></input>
+                <select class="search-by-dropdown" name="searchField" id="search-by-dropdown">
                     <option value="nada">Select One</option>
                     <option value="reviewTitle">Review Title</option>
                     <option value="bookTitle">Book Title</option>
                     <option value="userName">User Name</option>
-                    <option value="catergory">Book Category</option>
+                    <option value="category">Book Category</option>
                     <option value="tags">Review Tags</option>
+                    <option value="reviewBody">Review Content</option>
                 </select>
-                <input type="text" name="searchData" id="search-textbox"></input>
                 <button name="submit" id="search-button" value="Submit Review"> Search </button>
             </fieldset>
         </form>
     </div>
+
+    <div class="message" th:text="${message}"></div>
+
 </nav>

@@ -14,22 +14,17 @@
     <div class="wrapper">
         <section class="header" th:insert="/sections/header :: header"></section>
         <section class="nav-bar" th:insert="/sections/nav :: nav"></section>
-        
 
-        <section class="review-container">
+        <section class="review-container">	          
 
-            <section th:each="review : ${reviews}">
-
-                <article class="review-item">
+                <article class="review-item" th:each="review : ${reviews}">
 
                     <section class="review-item__header">
                         <h2 class="review-item__header-title"><a th:text="${review.reviewTitle}" th:href="|../reviews/${review.id}|">First Review</a></h2>
                         <h3 class="review-item__header-book" th:text="${review.bookTitle}">Book 1 Title / Book 1 Author
                         </h3>
                         <h3 class="review-item__header-category" th:text="${review.category.categoryName}">Book Category</h3>
-                        <!-- <section class="review-item__header-rating" th:text="${review.ranking}">****</section> -->
                         <h4 class="review-item__header-review-author" th:text="${review.userName}">Bross-Hog</h4>
-                        <!-- <h5 class="review-item__header-date" th:text="${review.reviewDate}">10/2/2019</h5> -->
                     </section>
                 </article>
 

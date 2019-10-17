@@ -2,7 +2,6 @@ package org.wcci.reviewssite;
 
 import java.time.LocalDate;
 import java.util.Arrays;
-import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -69,10 +68,6 @@ public class Review {
 		return bookTitle;
 	}
 
-	//public String getCategoryName() {
-		//return this.category.getCategoryName();
-	//}
-
 	public String getUserName() {
 		return userName;
 	}
@@ -100,9 +95,6 @@ public class Review {
 	public int getLikes() {
 		return likes;
 	}
-
-	
-	
 
 	@Override
 	public int hashCode() {
@@ -180,7 +172,5 @@ public class Review {
 				+ userName + ", reviewDate=" + reviewDate + ", category=" + category + ", tags=" + tags
 				+ ", reviewBody=" + reviewBody + ", likes=" + likes + "]";
 	}
-
-	
 
 }

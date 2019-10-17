@@ -45,8 +45,6 @@ public class HomeController {
 		model.addAttribute("review", review);
 		return "review";
 	}
-	
-	
 
 	@GetMapping("/reviews/all_reviews")
 	public String navRedirect() {
@@ -57,7 +55,7 @@ public class HomeController {
 	public String navRedirect2() {
 		return "redirect:/add_review";
 	}
-	
+
 	@PostMapping("/add")
 	public String addReview(String reviewTitle, String bookTitle, String userName, Long categoryId, String reviewBody,
 			Long... tagList) {
@@ -90,14 +88,62 @@ public class HomeController {
 		reviewStorage.addLike(review);
 		return "redirect:/reviews/" + reviewId;
 	}
-	
+
 	@PostMapping("/search")
-	public String searchAllReviews(String searchData, Model model) {
-		model.addAttribute("reviews", reviewStorage.searchByReviewTitle(searchData));
-//		model.addAttribute("reviews", reviewStorage.searchByBookTitle(searchData));
-//		model.addAttribute("reviews", reviewStorage.searchByUserName(searchData));
-//		model.addAttribute("reviews", reviewStorage.searchByReviewBody(searchData));
+	public String searchAllReviews(String searchField, String searchData, Model model) {
+
+		Collection<Review> searchResults = new ArrayList<>();
+
+		switch (searchField) {
+		case "reviewTitle":
+			searchResults = (Collection<Review>) reviewStorage.searchByReviewTitle(searchData);
+			if (searchResults.size() > 0) {
+				model.addAttribute("reviews", searchResults);
+			} else {
+				noSearchResultsFound(model);
+			}		
+			break;
+		case "bookTitle":
+			searchResults = (Collection<Review>) reviewStorage.searchByBookTitle(searchData);
+			if (searchResults.size() > 0) {
+				model.addAttribute("reviews", searchResults);
+			} else {
+				noSearchResultsFound(model);
+			}
+			break;
+		case "userName":
+			searchResults = (Collection<Review>) reviewStorage.searchByUserName(searchData);
+			if (searchResults.size() > 0) {
+				model.addAttribute("reviews", searchResults);
+			} else {
+				noSearchResultsFound(model);
+			}
+			break;
+		case "reviewBody":
+			searchResults = (Collection<Review>) reviewStorage.searchByReviewBody(searchData);
+			if (searchResults.size() > 0) {
+				model.addAttribute("reviews", searchResults);
+			} else {
+				noSearchResultsFound(model);
+			}
+			break;
+		// case "category":
+		// model.addAttribute("reviews", reviewStorage.searchByCategory(searchData));
+		// break;
+		// case "tags":
+		// model.addAttribute("reviews", reviewStorage.searchByTags(searchData));
+		// break;
+		default:
+			noSearchResultsFound(model);
+			break;
+		}
+
 		return "reviews";
 	}
-	
+
+	private void noSearchResultsFound(Model model) {
+		model.addAttribute("message", "Search returned no results.  All reviews are displayed.");
+		model.addAttribute("reviews", reviewStorage.findAllTheReviews());
+	}
+
 }

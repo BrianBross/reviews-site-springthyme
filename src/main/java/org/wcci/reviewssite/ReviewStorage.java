@@ -1,7 +1,5 @@
 package org.wcci.reviewssite;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -28,19 +26,23 @@ public class ReviewStorage {
 	}
 
 	public Iterable<Review> searchByReviewTitle(String searchData) {
-		return reviewRepo.findByReviewTitleContainsIgnoreCase(searchData);
+		return reviewRepo.findByReviewTitleContainsIgnoreCaseOrderByIdDesc(searchData);
 	}
 	
 	public Iterable<Review> searchByBookTitle(String searchData) {
-		return reviewRepo.findByBookTitleContainsIgnoreCase(searchData);
+		return reviewRepo.findByBookTitleContainsIgnoreCaseOrderByIdDesc(searchData);
 	}
 	
 	public Iterable<Review> searchByUserName(String searchData) {
-		return reviewRepo.findByUserNameContainsIgnoreCase(searchData);
+		return reviewRepo.findByUserNameContainsIgnoreCaseOrderByIdDesc(searchData);
 	}
 	
 	public Iterable<Review> searchByReviewBody(String searchData) {
-		return reviewRepo.findByReviewBodyContainsIgnoreCase(searchData);
+		return reviewRepo.findByReviewBodyContainsIgnoreCaseOrderByIdDesc(searchData);
 	}
+	
+//	public Iterable<Review> searchByCategory(String searchData) {
+//		return reviewRepo.findByReviewCategoryNameContainsIgnoreCase(searchData);
+//	}
 
 }
