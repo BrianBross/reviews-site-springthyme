@@ -75,6 +75,24 @@ public class Populator implements CommandLineRunner {
 				category7,"My parents need to read this!!!");
 		Review review8 = new Review("Eighth Review", "Help for the Aspiring Coder", "Elon Tusk", 
 				category8, "Hate It!!!");
+		
+		Review review9 = new Review("Ninth Review", "Pride and Prejudice and Zombies", 
+				"Mary Shelley", category1,"Lizzie Bennett as you've never seen her before!");
+		Review review10 = new Review("Tenth Review", "Day the earth stood still", "Polly Posey", 
+				category2, "Loved it!!!");
+		Review review11 = new Review("Eleventh Review", "Teen Wolves: Officially a Teen", "Boris Karloff", 
+				category7,"A Howling Read!!!");
+		Review review12 = new Review("Twelfth Review", "CSS for the chronically insane", "Elon Tusk", 
+				category4, "Loved It!!!");
+
+		Review review13 = new Review("Ninth Review", "Pride and Prejudice and Zombies", 
+				"Mary Shelley", category1,"Lizzie Bennett as you've never seen her before!");
+		Review review14 = new Review("Tenth Review", "Day the earth stood still", "Polly Posey", 
+				category2, "Loved it!!!");
+		Review review15 = new Review("Eleventh Review", "Teen Wolves: Officially a Teen", "Boris Karloff", 
+				category7,"A Howling Read!!!");
+		Review review16 = new Review("Twelfth Review", "CSS for the chronically insane", "Elon Tusk", 
+				category4, "Loved It!!!");
 
 		reviewStorage.addReview(review1);
 		reviewStorage.addReview(review2);
@@ -84,8 +102,16 @@ public class Populator implements CommandLineRunner {
 		reviewStorage.addReview(review6);
 		reviewStorage.addReview(review7);
 		reviewStorage.addReview(review8);		
+		reviewStorage.addReview(review9);
+		reviewStorage.addReview(review10);
+		reviewStorage.addReview(review11);
+		reviewStorage.addReview(review12);	
 		
-
+		reviewStorage.addReview(review13);
+		reviewStorage.addReview(review14);
+		reviewStorage.addReview(review15);
+		reviewStorage.addReview(review16);		
+		
 	}
 	
 	
