@@ -15,7 +15,6 @@ public class Review {
 	@Id
 	@GeneratedValue
 	private Long id;
-
 	private String reviewTitle;
 	private String bookTitle;
 	private String userName;
@@ -26,14 +25,6 @@ public class Review {
 	private List<Tag> tags;
 	private String reviewBody;
 	private int likes;
-
-	public Category getCategory() {
-		return category;
-	}
-
-	public List<Tag> getTags() {
-		return tags;
-	}
 
 	public Review(String reviewTitle, String bookTitle, String userName, Category category, String reviewBody,
 			Tag... tags) {
@@ -59,9 +50,12 @@ public class Review {
 		tags.add(tagToAdd);
 	}
 
+	public Long getId() {
+		return id;
+	}
+
 	public String getReviewTitle() {
 		return reviewTitle;
-
 	}
 
 	public String getBookTitle() {
@@ -72,28 +66,31 @@ public class Review {
 		return userName;
 	}
 
+	public Category getCategory() {
+		return category;
+	}
+
 	public LocalDate getReviewDate() {
 		return reviewDate;
+	}
 
+	public List<Tag> getTags() {
+		return tags;
 	}
 
 	public String getReviewBody() {
 		return reviewBody;
 	}
 
-	public Review() {
-	}
-
-	public Long getId() {
-		return id;
+	public int getLikes() {
+		return likes;
 	}
 
 	public void setLikes() {
 		this.likes++;
 	}
 
-	public int getLikes() {
-		return likes;
+	public Review() {
 	}
 
 	@Override
@@ -172,5 +169,4 @@ public class Review {
 				+ userName + ", reviewDate=" + reviewDate + ", category=" + category + ", tags=" + tags
 				+ ", reviewBody=" + reviewBody + ", likes=" + likes + "]";
 	}
-
 }

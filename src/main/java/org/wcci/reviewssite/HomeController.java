@@ -59,13 +59,9 @@ public class HomeController {
 	@PostMapping("/add")
 	public String addReview(String reviewTitle, String bookTitle, String userName, Long categoryId, String reviewBody,
 			Long... tagList) {
-
 		Category category = categoryStorage.findCategory(categoryId);
-
 		List<Tag> tags = new ArrayList<Tag>();
-
 		Long reviewId;
-
 		if (tagList != null) {
 			for (Long id : tagList) {
 				tags.add(tagStorage.findTag(id));
@@ -73,7 +69,6 @@ public class HomeController {
 			Review reviewToAdd = new Review(reviewTitle, bookTitle, userName, category, reviewBody, tags);
 			reviewStorage.addReview(reviewToAdd);
 			reviewId = reviewToAdd.getId();
-
 		} else {
 			Review reviewToAdd = new Review(reviewTitle, bookTitle, userName, category, reviewBody);
 			reviewStorage.addReview(reviewToAdd);
@@ -91,9 +86,7 @@ public class HomeController {
 
 	@PostMapping("/search")
 	public String searchAllReviews(String searchField, String searchData, Model model) {
-
 		Collection<Review> searchResults = new ArrayList<>();
-
 		switch (searchField) {
 		case "reviewTitle":
 			searchResults = (Collection<Review>) reviewStorage.searchByReviewTitle(searchData);
@@ -101,7 +94,7 @@ public class HomeController {
 				model.addAttribute("reviews", searchResults);
 			} else {
 				noSearchResultsFound(model);
-			}		
+			}
 			break;
 		case "bookTitle":
 			searchResults = (Collection<Review>) reviewStorage.searchByBookTitle(searchData);
@@ -127,17 +120,10 @@ public class HomeController {
 				noSearchResultsFound(model);
 			}
 			break;
-		// case "category":
-		// model.addAttribute("reviews", reviewStorage.searchByCategory(searchData));
-		// break;
-		// case "tags":
-		// model.addAttribute("reviews", reviewStorage.searchByTags(searchData));
-		// break;
 		default:
 			noSearchResultsFound(model);
 			break;
 		}
-
 		return "reviews";
 	}
 
@@ -145,5 +131,4 @@ public class HomeController {
 		model.addAttribute("message", "Search returned no results.  All reviews are displayed.");
 		model.addAttribute("reviews", reviewStorage.findAllTheReviews());
 	}
-
 }

@@ -28,21 +28,17 @@ public class ReviewStorage {
 	public Iterable<Review> searchByReviewTitle(String searchData) {
 		return reviewRepo.findByReviewTitleContainsIgnoreCaseOrderByIdDesc(searchData);
 	}
-	
+
 	public Iterable<Review> searchByBookTitle(String searchData) {
 		return reviewRepo.findByBookTitleContainsIgnoreCaseOrderByIdDesc(searchData);
 	}
-	
+
 	public Iterable<Review> searchByUserName(String searchData) {
 		return reviewRepo.findByUserNameContainsIgnoreCaseOrderByIdDesc(searchData);
 	}
-	
+
 	public Iterable<Review> searchByReviewBody(String searchData) {
 		return reviewRepo.findByReviewBodyContainsIgnoreCaseOrderByIdDesc(searchData);
 	}
-	
-//	public Iterable<Review> searchByCategory(String searchData) {
-//		return reviewRepo.findByReviewCategoryNameContainsIgnoreCase(searchData);
-//	}
 
 }

@@ -7,20 +7,16 @@ import org.springframework.stereotype.Repository;
 public class CategoryStorage {
 	@Autowired
 	CategoryRepository categoryRepo;
-	
+
 	public Category addCategory(Category categoryToAdd) {
 		return categoryRepo.save(categoryToAdd);
 	}
-	
+
 	public Category findCategory(Long id) {
 		return categoryRepo.findById(id).get();
 	}
-	
-	public Iterable<Category> findAllTheCategories(){
+
+	public Iterable<Category> findAllTheCategories() {
 		return categoryRepo.findAllByOrderByCategoryNameAsc();
 	}
-	
-//	public Iterable<Review> findReviewsByCategoryName() {
-//		return categoryRepo.findReviewsByCategoryId();
-//	}
 }

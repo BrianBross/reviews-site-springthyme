@@ -6,5 +6,4 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface CategoryRepository extends CrudRepository<Category, Long> {
 	public Iterable<Category> findAllByOrderByCategoryNameAsc();
-	//public Iterable<Review> findReviewsByCategoryId();
 }

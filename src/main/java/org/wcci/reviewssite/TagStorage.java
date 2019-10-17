@@ -7,17 +7,17 @@ import org.springframework.stereotype.Repository;
 public class TagStorage {
 	@Autowired
 	TagRepository tagRepo;
-	
+
 	public Tag addTag(Tag tagToAdd) {
 		return tagRepo.save(tagToAdd);
 	}
-	
+
 	public Tag findTag(Long id) {
 		return tagRepo.findById(id).get();
 	}
-	
+
 	public Iterable<Tag> findAllTheTags() {
 		return tagRepo.findAllByOrderByTagNameAsc();
 	}
-	
+
 }

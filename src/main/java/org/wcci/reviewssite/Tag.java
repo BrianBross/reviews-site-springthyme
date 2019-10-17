@@ -13,10 +13,8 @@ public class Tag {
 	@Id
 	@GeneratedValue
 	private Long id;
-
 	private String tagName;
-
-	@ManyToMany (mappedBy="tags")
+	@ManyToMany(mappedBy = "tags")
 	private List<Review> reviews;
 
 	public Tag() {
